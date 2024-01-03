@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <p>ini zikri aja</p>
+    <p>ini zikri aja mantul</p>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
