@@ -4,7 +4,7 @@ const Button = () => {
   return (
     <div className={[
       styles['button-saya'],
-      styles['mantul-gan']
+      
     ].join(" ")}>Button</div>
   )
 }

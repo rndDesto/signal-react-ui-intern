@@ -1,10 +1,16 @@
 .button-saya{
-    background-color: red;
+    background-color: #ff0025;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 50px;
     text-align: center;
     width: 100px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+.button-saya:active{
+    width:1000px;
+
 }
 
 .mantul-gan{
