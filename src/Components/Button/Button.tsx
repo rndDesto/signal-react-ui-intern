@@ -1,9 +1,11 @@
 import styles from './style.module.css'
 
-
-const Button = (props:any) => {
+const Button = () => {
   return (
-    <div className={styles['signal-button']}>Button {props.title}</div>
+    <div className={[
+      styles['button-saya'],
+      styles['mantul-gan']
+    ].join(" ")}>Button</div>
   )
 }
 

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Example from './Pages/Example/Example.tsx';
 import Home from './Pages/Home/Home.tsx';
+import { Stepper } from './Components/Stepper/Stepper.tsx';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,14 @@ const router = createBrowserRouter([
   {
     path: "/example",
     element: <Example />,
+  },
+  {
+    path: "/about",
+    element: <p>ini halaman about mantul </p>,
+  },
+  {
+    path: "/kerenmantul",
+    element: <Stepper />,
   },
 ]);
 
