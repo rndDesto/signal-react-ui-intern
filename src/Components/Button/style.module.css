@@ -1,12 +1,23 @@
-.button-saya{
-    background-color: red;
+.button-content{
+    background-color: #FF0025;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 35px;
     text-align: center;
     width: 100px;
+    cursor: pointer;
+}
+.button-content:hover{
+    background-color: #001A41;
+    color: white;
+}
+.button-border{
+    border: 10px solid rgb(255, 0, 0);
+}
+.button-border:hover{
+    border-color: rgb(255, 0, 0);
 }
 
-.mantul-gan{
-    border: 10px solid green;
-}
+
+
