@@ -1,12 +1,15 @@
 import styles from './style.module.css'
 
-const Button = () => {
+const SignalButton = (props:any) => {
+  const { namaButton, warna } = props
+
   return (
     <div className={[
       styles['button-saya'],
-      styles['mantul-gan']
-    ].join(" ")}>Button</div>
+      styles['mantul-gan'],
+      styles[`bg-${warna}`],
+    ].join(" ")}>{namaButton}</div>
   )
 }
 
-export default Button
+export default SignalButton
