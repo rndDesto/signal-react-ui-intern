@@ -22,9 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/kerenmantul",
     element: <Stepper />,
-  },{
+  },
+  {
     path: "/zikri",
     element: <Button />,
+  },
+  {
+    path: "/desto",
+    element: <Home />,
   },
 ]);
 
