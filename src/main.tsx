@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Example from './Pages/Example/Example.tsx';
 import Home from './Pages/Home/Home.tsx';
 import { Stepper } from './Components/Stepper/Stepper.tsx';
+import Button from './Components/Zikri/Button/Button.tsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,9 @@ const router = createBrowserRouter([
   {
     path: "/kerenmantul",
     element: <Stepper />,
+  },{
+    path: "/zikri",
+    element: <Button />,
   },
 ]);
 
