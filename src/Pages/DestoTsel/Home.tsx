@@ -1,5 +1,5 @@
-import Button from '../../../Components/Desto/Button/Button'
-import Label from '../../../Components/Desto/Label/Label'
+import Button from '../../Components/Desto/Button/Button'
+import Label from '../../Components/Desto/Label/Label'
 
 const Home = () => {
   return (
