@@ -1,23 +1,112 @@
-.button-content{
-    background-color: #FF0025;
+.button-saya{
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
     padding: 10px;
     border-radius: 35px;
     text-align: center;
     width: 100px;
     cursor: pointer;
+    margin: 10px;
 }
-.button-content:hover{
+.color-primary{
+    background-color: #ED0226;
+}
+.color-secondary{
     background-color: #001A41;
-    color: white;
 }
-.button-border{
-    border: 10px solid rgb(255, 0, 0);
+.color-valid{
+    background-color: #008E53;
 }
-.button-border:hover{
-    border-color: rgb(255, 0, 0);
+.color-info{
+    background-color: #0050AE;
+}
+.color-error{
+    background-color: #DB2941;
+}
+.color-warning{
+    background-color: #FDA22B;
+}
+.variant-1.color-primary{
+    background-color: #ED0226;
+    color: #ffffff;    
+}
+.variant-1.color-secondary{
+    background-color: #001A41;
+    color: #ffffff;    
+}
+.variant-1.color-valid{
+    background-color: #008E53;
+    color: #ffffff;    
+}
+.variant-1.color-info{
+    background-color: #0050AE;
+    color: #ffffff;    
+}
+.variant-1.color-error{
+    background-color: #DB2941;
+    color: #ffffff;    
+}
+.variant-1.color-warning{
+    background-color: #FDA22B;
+    color: #ffffff;    
+}
+.variant-2.color-primary{
+    border: 2px solid #ED0226;
+    color: #ED0226;
+    background-color: #ffffff;
+}
+.variant-2.color-secondary{
+    border: 2px solid #001A41;
+    color: #001A41;
+    background-color: #ffffff;
+}
+.variant-2.color-valid{
+    border: 2px solid #008E53;
+    color: #008E53;
+    background-color: #ffffff;   
+}
+.variant-2.color-info{
+    border: 2px solid #0050AE;
+    color: #0050AE;
+    background-color: #ffffff;
+    
+}
+.variant-2.color-error{
+    border: 2px solid #DB2941;
+    color: #DB2941;
+    background-color: #ffffff;
+    
+}
+.variant-2.color-warning{
+    border: 2px solid #FDA22B;
+    color: #FDA22B;
+    background-color: #ffffff;
+    
 }
 
+.size-small{
+    font-size: 12px;
+    width: 75px;
+}
+.size-medium{
+    font-size: 16px;
+    width: 100px;
+}
+.size-large{
+    font-size: 18px;
+    width: 125px;
+}
+.full-true{
+    width: 100%;
+}
+.full-false{
 
+}
+.disable-true div[class*="variant-"]{
+    background-color: black;
+}
 
+/* .variant-2.color-warning.disable-true{
+   
+    background-color: #000000;
+    
+} */
