@@ -1,27 +1,18 @@
 import styles from './style.module.css'
 
-
 const SignalButton = (props:any) => {
-  const { namaButton, warna , size, disable , full , variant} = props
+  const { namaButton, warna, size, full, disabled, variant} = props
 
   return (
-    <>
     <div className={[
-      styles[`variant-${variant}`],
       styles['button-saya'],
-      styles[`bg-${warna}`],
-      styles[`ukuran-${size}`],
-      styles[`disable-${disable}`],
+      /*styles['mantul-gan'],*/
+      styles[`color-${warna}`],
+      styles[`size-${size}`],
       styles[`full-${full}`],
-      styles[`variant-${variant}`]
-    ].join(" ")}>{namaButton}
-    </div>
-
-  {/* <p className={[
-  styles[`variant-${variant}`],
-  styles[`warna-${warna}`]
-  ].join(' ')}>aaa</p> */}
-    </>
+      styles[`disabled-${disabled}`],
+      styles[`variant-${variant}`],  
+    ].join(" ")}>{namaButton}</div>
   )
 }
 
