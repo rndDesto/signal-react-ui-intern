@@ -7,6 +7,7 @@ const SignalButton = (props:any) => {
   return (
     <>
     <div className={[
+      styles[`variant-${variant}`],
       styles['button-saya'],
       styles[`bg-${warna}`],
       styles[`ukuran-${size}`],
