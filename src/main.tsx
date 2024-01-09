@@ -8,6 +8,7 @@ import HomeAgil from './Pages/Agil/Home.tsx'
 import HomeZikri from './Pages/Zikri/Home.tsx';
 import { Stepper } from './Components/Stepper/Stepper.tsx';
 import Button from './Components/Zikri/Button/Button.tsx';
+import HomeNadhifa from './Pages/Nadhifafa/Home.tsx';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
     path: "/Agil",
     element: <HomeAgil />,
   },
+  {
+    path: "/nadhifa",
+    element: <HomeNadhifa />,
+  },
+
 ]);
 
 

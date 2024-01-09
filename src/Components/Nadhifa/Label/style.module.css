@@ -1,0 +1,28 @@
+.root{
+    display: flex;
+    padding: 8px;
+    background-color: gray;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+.label-rounded-1{
+    border-radius: 12px 0 12px 0;
+}
+
+.label-rounded-2{
+    border-radius: 12px;
+}
+
+.label-bg-primary{
+    background-color: red;
+}
+
+.label-bg-secondary{
+    background-color: yellow;
+}
+
+.label-bg-tritary{
+    background-color: green;
+}
+
