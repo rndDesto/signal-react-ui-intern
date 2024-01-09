@@ -7,8 +7,8 @@ import Label from '../../Components/Desto/Label/Label'
 const Home = () => {
   const [warna, setWarna] = useState('')
   return (
-    <div>
-        <h1>Home Desto</h1>
+    <div >
+        <h1 className="bg-red-500">Home Desto</h1>
         <p onClick={()=>setWarna('primary')}>warna merah</p>
         <p onClick={()=>setWarna('secondary')}>warna kuning</p>
         <p onClick={()=>setWarna('tritary')}>warna hijau</p>

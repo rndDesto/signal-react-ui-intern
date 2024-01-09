@@ -37,7 +37,7 @@ Contents:
 
 ### Button
 
-Button - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/1)
+Button - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/1) [Zikri]
 
   
 
@@ -49,14 +49,23 @@ Card - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/5)
 
 ### Overlay
 
-Callout - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/4)
+Callout - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/4)  [Agil]
 
 Snackbar - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/6)
 
 ### Navigation
 
-Chips - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/3)
+Chips - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/3)[Nadhifa]
 
 ### Typography
 
 Typography - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/2)
+
+
+### Commit Message 
+[Nama_Developer-Nama_Komponen]Message yang dicommit
+git commit -m "[Desto-Card]inisial komit komponen card"
+
+### Branch_Name
+[Nama_Developer] Nama_Branch
+[Desto] Develop_Componen_Card
