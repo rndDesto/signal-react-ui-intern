@@ -5,6 +5,7 @@ import Example from './Pages/Example/Example.tsx';
 import Home from './Pages/Home/Home.tsx';
 import HomeDesto from './Pages/DestoTsel/Home.tsx';
 import HomeAgil from './Pages/Agil/Home.tsx'
+import HomeZikri from './Pages/Zikri/Home.tsx';
 import { Stepper } from './Components/Stepper/Stepper.tsx';
 import Button from './Components/Zikri/Button/Button.tsx';
 
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/zikri",
-    element: <Button />,
+    element: <HomeZikri/>,
   },
   {
     path: "/desto",
