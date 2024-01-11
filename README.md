@@ -61,11 +61,3 @@ Chips - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/3
 
 Typography - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/2)
 
-
-### Commit Message 
-[Nama_Developer-Nama_Komponen]Message yang dicommit
-git commit -m "[Desto-Card]inisial komit komponen card"
-
-### Branch_Name
-[Nama_Developer] Nama_Branch
-[Desto] Develop_Componen_Card

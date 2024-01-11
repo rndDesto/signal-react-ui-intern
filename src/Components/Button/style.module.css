@@ -1,7 +1,7 @@
 
 .button-saya{
     margin: 20px;
-    border-radius: 30px;
+    border-radius: 30px solid black;
     text-align: center;
     cursor: pointer;
     padding: 10px 15px;
@@ -11,6 +11,9 @@
     border: none;
     width: 100px;
     margin: 0;
+}
+.button-saya:active{
+    background-color: blue;
 }
 .color-primary {
     background-color: red;
