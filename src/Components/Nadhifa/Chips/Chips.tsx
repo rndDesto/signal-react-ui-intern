@@ -1,24 +1,15 @@
-import { useEffect } from 'react';
 import styles from './style.module.css';
 const  SignalChips = (props:any) => {
  
-  const { onClick, mantul} = props
-
-
-  useEffect(() => {
-  console.log("chips = ",mantul)
-
-  }, [onClick]);
-  
+  const { onClick, data} = props
     return (
-   
-
-      <button onClick={onClick} className={[
+      <button disabled={data.isDisabled} onClick={onClick} className={[
+        styles['button'],
         styles['Chips-saya'],
-        mantul.isSelected && styles[`keywords-active`]  
+        data.isSelected && styles[`keywords-active`],
       ].join(" ")}>
         {/* <img src = {img}  className='w-2'/> */}
-        {mantul.name}</button>
+        {data.name}</button>
         )
     }
       

@@ -17,6 +17,11 @@
     background-color: rgba(0, 0, 255, 0.5)
 }
 
+button:disabled{
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
 
 
