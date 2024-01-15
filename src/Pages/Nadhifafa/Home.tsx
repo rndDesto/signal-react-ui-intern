@@ -5,7 +5,7 @@ const Home = () => {
 
   const luping = [
     {
-      name: "telkom",
+      name: "Telkom",
       isSelected: false,
       isDisabled: false,
     },
@@ -18,7 +18,7 @@ const Home = () => {
     {
       name: "Ke Contariner lain",
       isSelected: false,
-      imageUrl: "icon.png",
+      imageUrl: "https://cdn-icons-png.flaticon.com/128/2838/2838779.pn",
       isDisabled: true,
     },
   ];
