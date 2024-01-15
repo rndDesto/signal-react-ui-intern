@@ -9,6 +9,7 @@ const Home = () => {
   const [warna, setWarna,] = useState('')
 
   const [rounded, setRounded] = useState('')
+  const[activeButton, setActiveButton] = useState<number | null>(null);
 
   return (
     <div>
@@ -17,8 +18,8 @@ const Home = () => {
         <p onClick={()=>setWarna('secondary')}>warna kuning</p>
         <p onClick={()=>setWarna('tritary')}>warna hijau</p>
         <Button />
-
-
+        <SignalButton onClick={()=>setRounded('1')} namaButton="1" warna="info" />
+        <SignalButton onClick={()=>setRounded('2')} namaButton="2" warna="info" />
         <Label bg={warna} rounded={rounded}>
           <Images w="30" height="30" src="https://cdn-icons-png.flaticon.com/128/665/665049.png" />
           <p>data tidak ditemukan</p>

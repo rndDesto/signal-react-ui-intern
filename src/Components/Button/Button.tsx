@@ -4,6 +4,7 @@ const SignalButton = (props:any) => {
   const { namaButton, warna, size, full, disabled, variant, onClick} = props
 
   return (
+    
     <div onClick={onClick} className={[
       styles['button-saya'],
       /*styles['mantul-gan'],*/
