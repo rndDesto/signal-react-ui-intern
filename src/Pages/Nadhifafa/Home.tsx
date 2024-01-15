@@ -5,20 +5,21 @@ const Home = () => {
 
   const luping = [
     {
-      name: "Telkom",
+      name: " Telkom",
       isSelected: false,
       isDisabled: false,
+      imageUrl : "https://cdn-icons-png.flaticon.com/512/3037/3037255.png"
     },
     {
       name: "Ke Operator lain",
       isSelected: false,
-      imageUrl: "https://cdn-icons-png.flaticon.com/128/2838/2838779.png",
+      imageUrl: "https://cdn-icons-png.flaticon.com/512/9356/9356780.png",
       isDisabled: false,
     },
     {
       name: "Ke Contariner lain",
       isSelected: false,
-      imageUrl: "https://cdn-icons-png.flaticon.com/128/2838/2838779.pn",
+      imageUrl: "https://cdn-icons-png.flaticon.com/512/9356/9356780.png",
       isDisabled: true,
     },
   ];
@@ -33,11 +34,12 @@ const Home = () => {
     );
   };
   return (
-    <div>
+    <div className="">
       {data.map((item, index) => (
         <SignalChips
           data={item}
-          onClick={() => handleChipClick(index)}
+          onClick={() => handleChipClick(index)} 
+          img={item.imageUrl}
         />
       ))}
 
