@@ -1,29 +1,77 @@
 import { useState } from 'react'
-import SignalButton from '../../Components/Button/Button'
-import Button from '../../Components/Zikri/button/Button'
-import { Images } from '../../Components/Zikri/Images/Images'
-import Label from '../../Components/Zikri/Label/Label'
+import SignalButton from '../../Components/Zikri/Button/Signal-Button'
+// import Styles from '../Zikri/style.module.css'
+
+
 
 const Home = () => {
-  const [warna, setWarna,] = useState('')
-  const [rounded, setRounded,] = useState('')
-  return (
-    <div>
-        <h1>Home Zikri</h1>
-        <p onClick={()=>setWarna('primary')}>warna merah</p>
-        <p onClick={()=>setWarna('secondary')} >warna kuning</p>
-        <p onClick={()=>setWarna('tritary')}>warna hijau</p>
-        <Button />
-        
-        <Label rounded={rounded} bg={warna}>
-          <Images w="30" height="30" src="https://cdn-icons-png.flaticon.com/128/665/665049.png" />
-          <p>data tidak ditemukan</p>
-          <SignalButton namaButton="oke, mengerti" warna="info" />
-          <SignalButton onClick ={()=>setRounded('1')} namaButton='1' warna="primary"/>
-          <SignalButton onClick ={()=>setRounded('2')} namaButton='2' warna="primary"/>
-        </Label>
+  const [color, setColor] = useState('')
+  const [size, setSize] = useState('')
+  const [variant, setVariant] = useState('')
+  const [full, setFull] = useState('')
+  const [disable, setDisable] = useState('')
+
+  
+   return (
+    <>
+    <div className='class="border-b-2 border-gray-100 mb-4 p-2 font-bold text-4xl'>
+      <h2>Button</h2>
     </div>
-  )
+    <div className="border-2 border-gray-200">
+      <SignalButton variant={variant} color={color} size={size} full={full} disable={disable} namaButton="signal button" />
+    </div>
+    <div className="flex space-x-4">
+      <div className="flex-1">Name</div>
+      <div className="flex-1">Type</div>
+      <div className="flex-1">Value</div>
+    </div>
+    <div className="flex bg-gray-100 space-x-4">
+      <div className="flex-1">Color</div>
+      <div className="flex-1">String</div>
+      <div className="flex-1">
+        <div onClick={()=>setColor('primary') }>primary</div>
+        <div onClick={()=>setColor('secondary')}>secondary</div>
+        <div onClick={()=>setColor('valid')}>valid</div>
+        <div onClick={()=>setColor('info')}>info</div>
+        <div onClick={()=>setColor('warning')}>warning</div>
+      </div>
+    </div>
+    <div className="flex space-x-4">
+      <div className="flex-1">size</div>
+      <div className="flex-1">String</div>
+      <div className="flex-1">
+        <div onClick={()=>setSize('small')}>small</div>
+        <div onClick={()=>setSize('medium')}>medium</div>
+        <div onClick={()=>setSize('large')}>large</div>
+      </div>
+    </div>
+    <div className="flex bg-gray-100 space-x-4">
+      <div className="flex-1">full</div>
+      <div className="flex-1">boolean</div>
+      <div className="flex-1">
+        <div onClick={()=>setFull('true')}>true</div>
+        <div onClick={()=>setFull('false')}>false</div>
+      </div>
+    </div>
+    <div className="flex space-x-4">
+      <div className="flex-1">disable</div>
+      <div className="flex-1">boolean</div>
+      <div className="flex-1">
+        <div onClick={()=>setDisable('true')}>true</div>
+        <div onClick={()=>setDisable('false')}>false</div>
+      </div>
+    </div>
+    <div className="flex bg-gray-100 space-x-4">
+      <div className="flex-1">variant</div>
+      <div className="flex-1">string</div>
+      <div className="flex-1">
+        <div onClick={()=>setVariant('1')}>1</div>
+        <div onClick={()=>setVariant('2')}>2</div>
+      </div>
+    </div>
+    
+    </>
+ )
 }
 
 export default Home
