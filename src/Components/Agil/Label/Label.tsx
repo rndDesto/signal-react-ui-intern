@@ -1,5 +1,4 @@
 
-import SignalButton from '../../Button/Button'
 import styles from './style.module.css'
 
 const Label = (props) => {

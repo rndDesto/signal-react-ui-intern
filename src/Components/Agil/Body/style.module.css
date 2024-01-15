@@ -1,0 +1,18 @@
+.root{
+    background-color: none;
+   
+}
+
+.size-1{
+    font-size: 12px;
+}
+.size-2{
+    font-size: 14px;
+}
+.weight-regular{
+    font-weight: normal;
+}
+
+.weight-bold{
+    font-weight: bold;
+}
