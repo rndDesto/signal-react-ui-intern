@@ -1,0 +1,32 @@
+.root{
+    background-color:#E7F5FC ;
+    border: 1px solid blue;
+    font-size: 14px;
+    border-radius: 15px;
+    padding: 8px  ;
+    display: flex; 
+    align-items: flex-start;    
+
+}
+
+
+.color-valid{
+    background-color: #EDFCF0;
+    border: 1px solid #008E53;
+
+}
+.color-warning{
+    background-color: #FEF3D4;
+    border: 1px solid #FED27F;
+
+}
+.color-info{
+    background-color: #E7F5FC;
+    border: 1px solid #0050AE;
+
+}
+.color-error{
+    background-color: #FDDDD4;
+    border: 1px solid #BC1D42;
+
+}
