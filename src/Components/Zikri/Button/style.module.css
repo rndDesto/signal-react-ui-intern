@@ -1,29 +1,32 @@
-.button-saya{
+.signal-button{
     font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
     padding: 10px;
     border-radius: 35px;
     text-align: center;
-    width: 100px;
+    width: 120px;
     cursor: pointer;
     margin: 10px;
 }
 .color-primary{
     background-color: #ED0226;
+    border: 2px solid #ED0226;
 }
 .color-secondary{
     background-color: #001A41;
+    border: 2px solid #001A41;
 }
 .color-valid{
     background-color: #008E53;
+    border: 2px solid #008E53;
 }
 .color-info{
     background-color: #0050AE;
-}
-.color-error{
-    background-color: #DB2941;
+    border: 2px solid #0050AE;
 }
 .color-warning{
     background-color: #FDA22B;
+    border: 2px solid #FDA22B;
 }
 .variant-1.color-primary{
     background-color: #ED0226;
@@ -70,12 +73,6 @@
     background-color: #ffffff;
     
 }
-.variant-2.color-error{
-    border: 2px solid #DB2941;
-    color: #DB2941;
-    background-color: #ffffff;
-    
-}
 .variant-2.color-warning{
     border: 2px solid #FDA22B;
     color: #FDA22B;
@@ -84,26 +81,33 @@
 }
 
 .size-small{
-    font-size: 12px;
-    width: 75px;
+    font-size: 14px;
+    width: 110px;
 }
 .size-medium{
     font-size: 16px;
-    width: 100px;
+    width: 125px;
 }
 .size-large{
     font-size: 18px;
-    width: 125px;
+    width: 150px;
 }
 .full-true{
     width: 100%;
+
 }
-.disable-true div[class*="variant-"]{
-    background-color: black;
+.variant-1.disable-true {
+    border: 2px solid #F5F6FA;
+    color: #B3BAC6;
+    background-color: #F5F6FA;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
-/* .variant-2.color-warning.disable-true{
-   
-    background-color: #000000;
-    
-} */
+.variant-2.disable-true {
+    border: 2px solid #F5F6FA;
+    color: #B3BAC6;
+    background-color: #F5F6FA;
+    cursor: not-allowed;
+    pointer-events: none;
+}
