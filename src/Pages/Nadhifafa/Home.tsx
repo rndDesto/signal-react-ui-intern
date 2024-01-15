@@ -18,42 +18,38 @@ const Home = () => {
 
 const luping = [
   {
-  name:'telkom',
-  isSelected:false,
-  isDisabled:false
-},
-{
-  name:'Ke Operator lain',
-  isSelected:false,
-  imageUrl:"https://cdn-icons-png.flaticon.com/128/2838/2838779.png",
-  isDisabled:false
-},
-{
-  name:'Ke Contariner lain',
-  isSelected:false,
-  imageUrl:"icon.png",
-  isDisabled:true
-},
-
+    name:'telkom',
+    isSelected:false,
+    isDisabled:false
+  },
+  {
+    name:'Ke Operator lain',
+    isSelected:false,
+    imageUrl:"https://cdn-icons-png.flaticon.com/128/2838/2838779.png",
+    isDisabled:false
+  },
+  {
+    name:'Ke Contariner lain',
+    isSelected:false,
+    imageUrl:"icon.png",
+    isDisabled:true
+  }
 ]
 const [data, setData] = useState(luping);
 
-  const handleChipClick = (index) => {
-    const updatedData = [...data];
-    updatedData[index].isSelected = !updatedData[index].isSelected;
-    setData(updatedData);
-  };
+const handleChipClick = (index) => {
+  setData((prevState) =>
+    prevState.map((item, i) => ({
+      ...item,
+      isSelected: i === index,
+    }))
+  );
+};
   return (
     <div>
       <div>
-      {luping.map((item, index) => (
-        <div key={index}
-          onClick={() => handleChipClick(index)}
-          className={`Chips ${item.isSelected ? 'selected' : ''}`}
-          disabled={item.isDisabled}>
-          
-          <SignalChips namaChips={item.name} img={item.imageUrl} mantul={item} keywords="keywords" />
-        </div>
+      {data.map((item, index) => (
+          <SignalChips key={index} namaChips={item.name} img={item.imageUrl} mantul={item} keywords="keywords" onClick={()=>handleChipClick(index)}/>
       ))}
 
       <pre>{JSON.stringify(data,null,2)}</pre>
