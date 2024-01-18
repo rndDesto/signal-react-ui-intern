@@ -1,18 +1,18 @@
 .Chips-saya{
     margin: 10px 5px;
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     cursor: pointer;
     font-size: 12px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px;
     background-color: white;
     color: black;
     width: auto;
     white-space: nowrap;
     justify-self: center;
     align-items: center; 
-    display: inline-flex;
+    display: flex;
 }
 
 .keywords-active{
