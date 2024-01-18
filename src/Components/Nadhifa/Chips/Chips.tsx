@@ -10,24 +10,10 @@ const  SignalChips = (props:any) => {
       styles['Chips-saya'],
       data.isSelected && styles['keywords-active'],
     ].join(" ")}>
-      {img!==" " &&<img src={img} className='w-5'/>}
+      {img !== "" &&<img src={img} className='w-5'/>}
       {data.name}</button>   
-    </div> 
-    
+    </div>  
   );
 };
       
-<<<<<<< Updated upstream
-=======
-    <button disabled={data.isDisabled} onClick={onClick} className={[
-      styles['button'],
-      styles['Chips-saya'],
-      data.isSelected && styles['keywords-active'],
-    ].join(" ")}>
-      <img src={img} className='w-5'/>
-      {data.name}</button>     
-  );
-};
-      
->>>>>>> Stashed changes
 export default SignalChips;
