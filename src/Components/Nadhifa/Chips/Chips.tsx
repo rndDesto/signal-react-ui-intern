@@ -9,7 +9,7 @@ const  SignalChips = (props:any) => {
         styles['Chips-saya'],
         data.isSelected && styles['keywords-active'],
       ].join(" ")}>
-        <img src={img} className='w-5'/>
+        <img src = {img}  className='w-2'/>
         {data.name}</button>
        
         )

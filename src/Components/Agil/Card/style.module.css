@@ -1,0 +1,102 @@
+.root{
+    width: 100%;
+    position: relative; 
+    background-image: url( https://interactive-examples.mdn.mozilla.net/media/examples/balloon.jpg );
+    background-size: cover;
+    height: 200px;
+}
+.background-white{
+    background-color: white;
+}
+.background-error-1{
+    background-color: #FDDDD4;
+}
+.background-valid-1{
+    background-color: #EDFCF0;
+}
+.background-info-1{
+    background-color: #E7F5FC;
+}
+.background-warning-1{
+    background-color: #FEF3D4;
+}
+
+.fontColor-black{
+    color: black;
+}
+.fontColor-info-5{
+    color: #0050AE;
+
+}.fontColor-warning-5{
+    color: #FDA22B;
+
+}.fontColor-valid-5{
+    color: #008E53;
+
+}.fontColor-error-5{
+    color: #DB2941;
+}
+
+.borderColor-white{
+    border-color:   white;
+}
+.borderColor-info-5{
+    border-color:  #0050AE;
+
+}.borderColor-warning-5{
+    border-color:  #FDA22B;
+
+}.borderColor-valid-5{
+    border-color: #008E53;
+
+}.borderColor-error-5{
+    border-color:  #DB2941;
+}
+
+.borderSize-1{
+    border-width: 1px;
+}
+.borderSize-2{
+    border-width: 2px;
+}
+.borderSize-3{
+    border-width: 3px;
+}
+.borderSize-4{
+    border-width: 4px;
+}
+.borderSize-5{
+    border-width: 5px;
+}
+
+.rounded-1{
+    border-radius: 16px
+}
+.rounded-2{
+    border-radius: 0 0 20px
+}
+.rounded-3{
+    border-radius: 20px 20px 20px 0
+}
+
+.variant-2{
+    background-color: #e7f5fcd1;
+}
+
+.space-0{
+    padding: 0;
+}
+.space-1{
+    padding: 8px 12px
+}
+.space-2{
+    padding: 24px
+}
+
+.shadow-1{
+    box-shadow: 0 4px 4px #9e9e9e40
+}
+.shadow-1{
+    box-shadow: 4px 0 4px #9e9e9e33
+}
+
