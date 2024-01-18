@@ -1,12 +1,12 @@
 import styles from './style.module.css'
 
-const SignalCard = (props) => {
+const SignalCard = (props:any) => {
     const {children,background,fontColor,borderColor,borderSize,rounded,variant,space,shadow} = props
 
   return (
 
   <div className= {styles.root}>
-  <div className= {[
+   <div className= {[
     styles[`background-${background || "white"}`],
     styles[`fontColor-${fontColor|| "black"}`],
     styles[`borderColor-${borderColor}`],
@@ -18,7 +18,7 @@ const SignalCard = (props) => {
   ].join(' ')}
   >
     {children}
-  </div>
+   </div>
   </div>
   )
 };

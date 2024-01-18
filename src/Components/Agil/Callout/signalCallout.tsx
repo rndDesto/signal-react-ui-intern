@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css';
 
-const SignalCallout = (props) => {
+const SignalCallout = (props:any) => {
   const { color, onClose, children, openCallout} = props;
 
   console.log("props = ", onClose)
   
   const [isOpen,setIsOpen] = useState(openCallout)
 
-  useEffect(() => {setIsOpen(openCallout)},[isOpen]
+  useEffect(() => {setIsOpen(openCallout)},[isOpen, openCallout]
 )
 
   return (

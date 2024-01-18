@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import  { useState } from 'react';
 import SignalCallout from '../../Components/Agil/Callout/signalCallout';
 import SignalBody from '../../Components/Agil/Body/SignalBody';
 import { SignalIcon } from '../../Components/Agil/icon/SignalIcon';
@@ -18,10 +18,10 @@ const Home = () => {
   const [space, setSpace] = useState('');
   const [shadow, setShadow] = useState('');
   
-  const handleChangeOpen = (event : { target: { value: boolean; }; }) => {
-    const selectedValue : boolean = event.target.value === 'true';
+  const handleChangeOpen = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue: boolean = event.target.value === 'true';
     setOpen(selectedValue);
-  };
+  };  
 
   const handleChangeColor = (event: { target: { value: string; }; }) => {
     const selectedValue = event.target.value;
@@ -68,12 +68,7 @@ const Home = () => {
   };
 
   
-useEffect(
-  ()=>{
-  console.log("Open ", background);
 
-  },[]
-)
 
 
   const handleCloseCallout = () => {
@@ -82,6 +77,10 @@ useEffect(
 
   return (
     <>
+
+
+
+
     <p className="text-3xl font-bold"> Callout</p>
       <div className="border-solid border border-gray-200 mb-5 bg-gray-50 p-4 rounded-sm">
         <SignalCallout color={color} openCallout={calloutOpen} onClose={Open && handleCloseCallout}>
@@ -120,13 +119,14 @@ useEffect(
       </div>
 
       <div className="flex space-x-4 bg-[#F6F3F3] mx-5">
-        <div className="flex-1 ">backgroundColor</div>
-        <div className="flex-1 ">string</div>
+        <div className="flex-1 ">onClose</div>
+        <div className="flex-1 ">fungtion</div>
         <div className="flex-1 ">
         <select className="p-3" value={Open.toString()} onChange={handleChangeOpen}>
           <option value="true">true</option>
           <option value="false">false</option>
-          </select>
+        </select>
+
         </div>
       </div>
 
