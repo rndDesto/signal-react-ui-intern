@@ -6,7 +6,7 @@ const SignalCard = (props:any) => {
   return (
 
   <div className= {styles.root}>
-  <div className= {[
+   <div className= {[
     styles[`background-${background || "white"}`],
     styles[`fontColor-${fontColor|| "black"}`],
     styles[`borderColor-${borderColor}`],
@@ -18,7 +18,7 @@ const SignalCard = (props:any) => {
   ].join(' ')}
   >
     {children}
-  </div>
+   </div>
   </div>
   )
 };

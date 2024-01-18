@@ -8,7 +8,7 @@ const SignalCallout = (props:any) => {
   
   const [isOpen,setIsOpen] = useState(openCallout)
 
-  useEffect(() => {setIsOpen(openCallout)},[isOpen]
+  useEffect(() => {setIsOpen(openCallout)},[isOpen, openCallout]
 )
 
   return (
