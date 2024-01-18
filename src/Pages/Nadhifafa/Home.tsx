@@ -45,9 +45,14 @@ const Home = () => {
   <>
     <div className='border-b-2 border-gray-100 mb-4 p-2 font-bold text-4xl '>
       <h2>Chips</h2>
+<<<<<<< Updated upstream
 
     </div>
     <div className="flex space-x-2">
+=======
+    </div>
+    <div className="">
+>>>>>>> Stashed changes
       {data.map((item, index) => (
         <SignalChips
           data={item}
@@ -74,6 +79,25 @@ const Home = () => {
       </SignalSnackBar>  
       </div>
     </div>
+<<<<<<< Updated upstream
+=======
+
+    
+    <div className="border-3 border-gray-300">
+    <div className='class="border-b-2 border-gray-100 mb-0 p-0 font-bold text-2xl '>
+          <h2>SnackBar</h2>
+      </div>
+      <div className="border-solid border border-gray-200 mb-5 bg-gray-50 py-4 px-5 rounded-sm">
+      <div>
+      <SignalSnackBar sticky={sticky}  color={color} position={position}>
+      <div className="flex justify-between m-2">
+        <div className="grow">can't showed this page</div>
+        <div className="grow-0">Retry</div>
+      </div>
+      </SignalSnackBar>  
+      </div>
+    </div>
+>>>>>>> Stashed changes
     </div>
     
     
