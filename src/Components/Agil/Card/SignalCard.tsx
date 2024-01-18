@@ -1,6 +1,6 @@
 import styles from './style.module.css'
 
-const SignalCard = (props) => {
+const SignalCard = (props:any) => {
     const {children,background,fontColor,borderColor,borderSize,rounded,variant,space,shadow} = props
 
   return (
