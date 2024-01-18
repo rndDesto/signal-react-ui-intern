@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import styles from './style.module.css'
 
-const SignalBody = (props) => {
+const SignalBody = (props:any) => {
   const {size, weight, children} = props
 
 

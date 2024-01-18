@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css';
 
-const SignalCallout = (props) => {
+const SignalCallout = (props:any) => {
   const { color, onClose, children, openCallout} = props;
 
   console.log("props = ", onClose)
