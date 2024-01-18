@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8b14b931e73a871e48b2defcbe66320ecc8a755a
 import styles from './style.module.css'
 
 const Label = (props:any) => {
