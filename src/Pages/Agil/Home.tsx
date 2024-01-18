@@ -18,8 +18,8 @@ const Home = () => {
   const [space, setSpace] = useState('');
   const [shadow, setShadow] = useState('');
   
-  const handleChangeOpen = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue: boolean = event.target.value === 'true';
+  const handleChangeOpen = (event:any) => {
+    const selectedValue  = event.target.value === 'true';
     setOpen(selectedValue);
   };  
 
