@@ -1,8 +1,8 @@
 
-import SignalButton from '../../Button/Button'
+
 import styles from './style.module.css'
 
-const Label = (props) => {
+const Label = (props:any) => {
   const {children, rounded, bg} = props
 
   // punya rounded
