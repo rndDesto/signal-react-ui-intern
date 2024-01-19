@@ -158,10 +158,77 @@ const Home = () => {
   }
 
   return (
-    <div >
-      <div className='flex'>
-        <div>{tiketKereta.trainName}</div>
-        <div>{maskapai.pessangerName}</div>
+    <div>
+      <div className='ali border border-gray-300 max-w-[768px] m-auto p-5 rounded-md mb-5'>
+      <div className='flex gap-2 items-center'>
+        <div>
+          <div>dr Mantul Djaja</div>
+          <div>Poli: Anak</div>
+        </div>
+        <div className='grow'>
+          <p className='text-center mb-5 text-xl'>Jadwal</p>
+          <div className='flex gap-2 flex-wrap justify-evenly'>
+            <div className='border px-2 rounded-s-md'>08:00</div>
+            <div className='border px-2 rounded-s-md'>08:00</div>
+            <div className='border px-2 rounded-s-md'>08:00</div>
+            <div className='border px-2 rounded-s-md'>08:00</div>
+            
+          </div>
+        </div>
+        <div>
+          <button className='bg-blue-500 text-white rounded-md p-3 w-full'>Pesan</button>
+        </div>
+      </div>
+      </div>
+
+
+      <div className='border border-gray-300 max-w-[768px] m-auto p-5 rounded-md'>
+        <div className='flex justify-between gap-5 items-center'>
+          <div className='grow'>
+            <div>GA-123</div>
+            <div>Ekonomi</div>
+          </div>
+          <div className='flex'>
+            <div>
+              <div>Berangkat</div>
+              <div>08:00</div>
+            </div>
+            <div className='ml-2'>
+              <div>Tiba</div>
+              <div>10:00</div>
+            </div>
+          </div>
+          <div>
+            <div className='text-xl text-orange-400 font-bold mb-5'>Rp 900.000 / Orang</div>
+            <button className='bg-blue-500 text-white rounded-md p-3 w-full'>Pesan</button>
+          </div>
+        </div>
+      </div>
+
+      <div className='border mt-5 border-gray-300 max-w-[768px] m-auto p-5 rounded-md'>
+        <div className='flex gap-3'>
+          <div className='w-1/3 border border-gray-300 p-5 rounded-md'>
+            <img></img>
+            <div>Mission Imposible</div>
+            <div className='mb-2'>2021</div>
+            <button className='bg-blue-500 text-white rounded-md p-3 w-full'>Pesan</button>
+          </div>
+
+          <div className='w-1/3 border border-gray-300 p-5 rounded-md'>
+            <img></img>
+            <div>Mission Imposible</div>
+            <div className='mb-2'>2021</div>
+            <button className='bg-blue-500 text-white rounded-md p-3 w-full'>Pesan</button>
+          </div>
+
+          <div className='w-1/3 border border-gray-300 p-5 rounded-md'>
+            <img></img>
+            <div>Mission Imposible</div>
+            <div className='mb-2'>2021</div>
+            <button className='bg-blue-500 text-white rounded-md p-3 w-full'>Pesan</button>
+          </div>
+
+        </div>
       </div>
 
         <h1 className="bg-red-500 p-10 text-4xl">Home Desto</h1>
