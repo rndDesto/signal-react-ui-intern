@@ -1,0 +1,45 @@
+.contain {
+  display: flex;
+  gap: 15px;
+}
+
+.contain::after {
+  content: "/";
+  padding-right: 15px;
+}
+.contain:last-child:after {
+  content: "";
+  padding-right: 15px;
+}
+
+.dropdown-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: -40px;
+  min-width: 240px;
+  translate: initial;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1;
+}
+
+.dropdown-trigger:hover .dropdown {
+  display: block;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li {
+  margin-bottom: 5px;
+}
