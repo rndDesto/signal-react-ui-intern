@@ -1,15 +1,14 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
-const SignalBreadcrumb = ({ items }) => {
+const SignalBreadcrumb = ( items:any ) => {
   const MAX_DISPLAY_ITEMS = 1;
 
   const generateBreadcrumb = () => {
     if (items.length <= 4) {
       return (
         <ul className="flex text-xl">
-          {items.map((item, index) => (
+          {items.map((item:any , index:any) => (
             <li className={styles['contain']} key={index}>
               <Link to={item.href} className="text-xl text-black">{item.name}</Link>
             </li>
@@ -22,7 +21,7 @@ const SignalBreadcrumb = ({ items }) => {
 
       return (
         <ul className="flex text-xl">
-          {displayedItems.map((item, index) => (
+          {displayedItems.map((item:any, index:any) => (
             <li className={styles['contain']} key={index}>
               <Link to={item.href} className="text-xl text-black">{item.name}</Link>
             </li>
@@ -34,7 +33,7 @@ const SignalBreadcrumb = ({ items }) => {
                   <p>...</p>
                   <div className={styles['dropdown']}>
                     <ul>
-                      {items.slice(MAX_DISPLAY_ITEMS, -2).map((item, index) => (
+                      {items.slice(MAX_DISPLAY_ITEMS, -2).map((item:any, index:any) => (
                         <li key={index}>
                           <Link to={item.href} className="text-xl text-black">{item.name}</Link>
                         </li>
