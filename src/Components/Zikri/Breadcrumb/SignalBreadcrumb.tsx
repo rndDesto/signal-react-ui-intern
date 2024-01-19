@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
-const SignalBreadcrumb = ( items:any ) => {
+const SignalBreadcrumb = (props:any  ) => {
+  const {items} = props
   const MAX_DISPLAY_ITEMS = 1;
 
   const generateBreadcrumb = () => {
