@@ -14,44 +14,73 @@ const Home = () => {
       {
         "nama": "dr. John Doe",
         "poli": "Anak",
-        "jadwal": ["08:00", "10:00", "12:00", "13:00"],
         "rumah_sakit": "Rumah Sakit ABC",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "08:00", "isDisabled": true},
+          {"name": "10:00", "isDisabled": false},
+          {"name": "12:00", "isDisabled": true},
+          {"name": "13:00", "isDisabled": false}
+        ]
       },
       {
         "nama": "dr. Jane Smith",
         "poli": "Anak",
-        "jadwal": ["12:00", "14:00", "20:00", "20:00"],
         "rumah_sakit": "Rumah Sakit XYZ",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "12:00", "isDisabled": false},
+          {"name": "14:00", "isDisabled": true},
+          {"name": "20:00", "isDisabled": true},
+          {"name": "20:00", "isDisabled": false}
+        ]
       },
       {
         "nama": "dr. David Wilson",
         "poli": "Anak",
-        "jadwal": ["08:00", "09:00", "10:00", "11:00"],
         "rumah_sakit": "Rumah Sakit ABC",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "08:00", "isDisabled": true},
+          {"name": "09:00", "isDisabled": true},
+          {"name": "10:00", "isDisabled": false},
+          {"name": "11:00", "isDisabled": true}
+        ]
       },
       {
         "nama": "dr. Sarah Lee",
         "poli": "Gigi",
-        "jadwal": ["09:00", "13:00", "14:00", "20:00"],
         "rumah_sakit": "Rumah Sakit DEF",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "09:00", "isDisabled": false},
+          {"name": "13:00", "isDisabled": true},
+          {"name": "14:00", "isDisabled": false},
+          {"name": "20:00", "isDisabled": true}
+        ]
       },
       {
         "nama": "dr. Michael Brown",
         "poli": "Gigi",
-        "jadwal": ["10:00", "11:00", "12:00", "13:00"],
         "rumah_sakit": "Rumah Sakit XYZ",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "10:00", "isDisabled": true},
+          {"name": "11:00", "isDisabled": true},
+          {"name": "12:00", "isDisabled": false},
+          {"name": "13:00", "isDisabled": false}
+        ]
       },
       {
         "nama": "dr. Emily Johnson",
         "poli": "Mata",
-        "jadwal": ["08:00", "15:00", "20:00"],
         "rumah_sakit": "Rumah Sakit PQR",
-        "photo": "https://placehold.co/160x200"
+        "photo": "https://placehold.co/160x200",
+        "jadwal": [
+          {"name": "08:00", "isDisabled": false},
+          {"name": "15:00", "isDisabled": true},
+          {"name": "20:00", "isDisabled": false}
+        ]
       }
     ]
   }
@@ -76,7 +105,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "10:00"
         },
-        "harga": "Rp 900.000 / Orang"
+        "harga": "Rp 900.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ],
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -91,7 +134,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "11:00"
         },
-        "harga": "Rp 1.200.000 / Orang"
+        "harga": "Rp 1.200.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -106,7 +163,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "12:00"
         },
-        "harga": "Rp 850.000 / Orang"
+        "harga": "Rp 850.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -121,7 +192,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "13:00"
         },
-        "harga": "Rp 1.500.000 / Orang"
+        "harga": "Rp 1.500.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -136,7 +221,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "14:00"
         },
-        "harga": "Rp 800.000 / Orang"
+        "harga": "Rp 800.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -151,7 +250,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "15:00"
         },
-        "harga": "Rp 1.700.000 / Orang"
+        "harga": "Rp 1.700.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -166,7 +279,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "16:00"
         },
-        "harga": "Rp 750.000 / Orang"
+        "harga": "Rp 750.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -181,7 +308,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "17:00"
         },
-        "harga": "Rp 1.900.000 / Orang"
+        "harga": "Rp 1.900.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -196,7 +337,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "18:00"
         },
-        "harga": "Rp 700.000 / Orang"
+        "harga": "Rp 700.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       },
       {
         "logo": "https://placehold.co/80x80",
@@ -211,7 +366,21 @@ const Home = () => {
           "status": "Tiba",
           "jam": "19:00"
         },
-        "harga": "Rp 1.800.000 / Orang"
+        "harga": "Rp 1.800.000 / Orang",
+        "bagasi": [
+          {
+            "name": "70kg",
+            "isDisable": false
+          },
+          {
+            "name": "100kg",
+            "isDisable": false
+          },
+          {
+            "name": "150kg",
+            "isDisable": true
+          }
+        ]
       }
     ]
   }
@@ -228,9 +397,9 @@ const Home = () => {
         "title": "Mission Impossible",
         "genre": "Action",
         "jadwal_tayang": [
-          "12:00",
-          "15:00",
-          "18:00"
+          {"name": "12:00", "isSelected": true},
+          {"name": "15:00", "isSelected": false},
+          {"name": "18:00", "isSelected": true}
         ],
         "durasi": "140 menit",
         "sinopsis": "Seorang agen rahasia harus menggagalkan rencana jahat yang mengancam dunia.",
@@ -250,9 +419,9 @@ const Home = () => {
         "title": "Inception",
         "genre": "Science Fiction",
         "jadwal_tayang": [
-          "13:00",
-          "16:00",
-          "19:00"
+          {"name": "13:00", "isSelected": false},
+          {"name": "16:00", "isSelected": true},
+          {"name": "19:00", "isSelected": true}
         ],
         "durasi": "148 menit",
         "sinopsis": "Seorang pencuri pikiran harus melakukan misi yang penuh intrik dalam mimpi orang lain.",
@@ -272,9 +441,9 @@ const Home = () => {
         "title": "The Shawshank Redemption",
         "genre": "Drama",
         "jadwal_tayang": [
-          "14:00",
-          "17:00",
-          "20:00"
+          {"name": "14:00", "isSelected": true},
+          {"name": "17:00", "isSelected": false},
+          {"name": "20:00", "isSelected": true}
         ],
         "durasi": "142 menit",
         "sinopsis": "Seorang pria salah dituduh dan dihukum penjara seumur hidup, mencari keadilan dan persahabatan di penjara Shawshank.",
@@ -288,8 +457,7 @@ const Home = () => {
         "nomor_tiket": "T12347",
         "lokasi_teater": "Teater XYZ",
         "harga_tiket": "Rp 110.000"
-      },
-      // Dan seterusnya untuk film-film lainnya...
+      }
     ]
   }
 
@@ -307,7 +475,7 @@ const Home = () => {
 
 
       {dataPasien.listDokter.map((dokter, index) => (
-        <div key={index} className='border border-gray-300 max-w-[768px] m-auto p-5 rounded-md mb-5'>
+        <div key={index} className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
           <div className='flex gap-2 items-center'>
             <div>
               <div>
@@ -321,7 +489,7 @@ const Home = () => {
               <p className='text-center text-sm mb-5'>Jadwal Praktek</p>
               <div className='flex gap-2 flex-wrap justify-evenly'>
                 {dokter.jadwal.map((jadwal, jadwalIndex) => (
-                  <div key={jadwalIndex} className='border px-2 rounded-s-md'>{jadwal}</div>
+                  <div key={jadwalIndex} className='border px-2 rounded-s-md'>{jadwal.name}</div>
                 ))}
               </div>
             </div>
@@ -334,7 +502,7 @@ const Home = () => {
 
 
     {maskapai.flights.map((flight, index) => (
-      <div className='border border-gray-300 max-w-[768px] m-auto p-5 rounded-md mb-5'>
+      <div className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
           <div key={index} className='flex justify-between gap-5 items-center'>
              <div>
               <img src={flight.logo} />
@@ -342,6 +510,11 @@ const Home = () => {
             <div className='grow'>
               <div>{flight.nomor_penerbangan}</div>
               <div>{flight.kelas}</div>
+              <div className="flex gap-1 flex-wrap">
+                {flight.bagasi.map((bags, idx) => (
+                  <div key={idx} className='border px-2 rounded-s-md'>{bags.name}</div>
+                ))}
+              </div>
             </div>
             <div className='flex'>
               <div>
@@ -362,7 +535,7 @@ const Home = () => {
     ))}
 
 
-      <div className='border mt-5 border-gray-300 max-w-[768px] m-auto p-5 rounded-md'>
+      <div className='border mt-5 border-gray-300 max-w-[1200px] m-auto p-5 rounded-md'>
         <div className="flex gap-3">
           {movieList.movies.map((movie, index) => (
             <div
@@ -379,7 +552,7 @@ const Home = () => {
                   <div>Jadwal:</div>
                     <div className="flex gap-1 flex-wrap">
                     {movie.jadwal_tayang.map((jadwal, idx) => (
-                      <div key={idx} className='border px-2 rounded-s-md'>{jadwal}</div>
+                      <div key={idx} className='border px-2 rounded-s-md'>{jadwal.name}</div>
                     ))}
                     </div>
                   </div>

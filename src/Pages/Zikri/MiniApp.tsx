@@ -21,7 +21,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "10:00"
             },
-            "harga": "Rp 900.000 / Orang"
+            "harga": "Rp 900.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ],
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -36,7 +50,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "11:00"
             },
-            "harga": "Rp 1.200.000 / Orang"
+            "harga": "Rp 1.200.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -51,7 +79,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "12:00"
             },
-            "harga": "Rp 850.000 / Orang"
+            "harga": "Rp 850.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -66,7 +108,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "13:00"
             },
-            "harga": "Rp 1.500.000 / Orang"
+            "harga": "Rp 1.500.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -81,7 +137,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "14:00"
             },
-            "harga": "Rp 800.000 / Orang"
+            "harga": "Rp 800.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -96,7 +166,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "15:00"
             },
-            "harga": "Rp 1.700.000 / Orang"
+            "harga": "Rp 1.700.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -111,7 +195,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "16:00"
             },
-            "harga": "Rp 750.000 / Orang"
+            "harga": "Rp 750.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -126,7 +224,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "17:00"
             },
-            "harga": "Rp 1.900.000 / Orang"
+            "harga": "Rp 1.900.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -141,7 +253,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "18:00"
             },
-            "harga": "Rp 700.000 / Orang"
+            "harga": "Rp 700.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           },
           {
             "logo": "https://placehold.co/80x80",
@@ -156,7 +282,21 @@ const MiniApp = () => {
               "status": "Tiba",
               "jam": "19:00"
             },
-            "harga": "Rp 1.800.000 / Orang"
+            "harga": "Rp 1.800.000 / Orang",
+            "bagasi": [
+              {
+                "name": "70kg",
+                "isDisable": false
+              },
+              {
+                "name": "100kg",
+                "isDisable": false
+              },
+              {
+                "name": "150kg",
+                "isDisable": true
+              }
+            ]
           }
         ]
       }
