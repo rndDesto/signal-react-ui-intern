@@ -8,6 +8,10 @@ import HomeAgil from './Pages/Agil/Home.tsx'
 import HomeZikri from './Pages/Zikri/Home.tsx';
 import { Stepper } from './Components/Stepper/Stepper.tsx';
 import HomeNadhifa from './Pages/Nadhifafa/Home.tsx';
+import NadhifaMiniApp from './Pages/Nadhifafa/MiniApp.tsx'
+import ZikriMiniApp from './Pages/Zikri/MiniApp.tsx'
+import AgilMiniApp from './Pages/Agil/MiniApp.tsx'
+
 import './index.css'
 
 
@@ -45,7 +49,18 @@ const router = createBrowserRouter([
     path: "/nadhifa",
     element: <HomeNadhifa />,
   },
-
+  {
+    path: "nadhifa/miniapp",
+    element: <NadhifaMiniApp />,
+  },
+  {
+    path: "agil/miniapp",
+    element: <AgilMiniApp />,
+  },
+  {
+    path: "zikri/miniapp",
+    element: <ZikriMiniApp />,
+  }
 ]);
 
 
