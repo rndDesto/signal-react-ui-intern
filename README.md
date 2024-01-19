@@ -50,3 +50,9 @@ Snackbar - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestone
 
 ### Navigation
 Chips - [Link](https://gitlab.com/rndDesto/signal-react-ui-intern/-/milestones/3)[Nadhifa]
+
+
+### Mini Projek
+Rumah Sakit = Nadhifa
+Maskapai = Zikri
+Movies = Agil
