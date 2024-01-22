@@ -1,3 +1,13 @@
+import { useState } from "react"
+import SignalBreadcrumb from "../../Components/Zikri/Breadcrumb/SignalBreadcrumb"
+import SignalButton from "../../Components/Zikri/Button/Signal-Button"
+import SignalCallout from "../../Components/Agil/Callout/signalCallout"
+import SignalCard from "../../Components/Agil/Card/SignalCard"
+import SignalChips from "../../Components/Nadhifa/Chips/Chips"
+import { SignalIcon } from "../../Components/Agil/icon/SignalIcon"
+import SignalBody from "../../Components/Agil/Body/SignalBody"
+
+
 
 const MiniApp = () => {
     const movieList = {
@@ -75,8 +85,101 @@ const MiniApp = () => {
           }
         ]
       }
+
+      const breadcrumbItems = [
+        { name: 'Home', href: '/' },
+        { name: 'Button', href: '/button' },
+        { name: 'Tab', href: '/tab' },
+        { name: 'Typography', href: '/typography' },
+        { name: 'Education', href: '/education' },
+        { name: 'Address', href: '/address' }
+      ]
+
+
+
+      const [data, setData] = useState(movieList);
+      const [calloutOpen] = useState(true);
+      const handleChipClick = (index: number) => {
+        setData((prevState) =>
+          prevState.map((item, i) => ({
+            ...item,
+            isSelected: i === index,
+          }))
+        );
+      };
+
+    
+    
+
   return (
-    <div>Nama penonton = {movieList.nama}</div>
+
+
+
+    <div>
+
+      <div >
+      <SignalCallout color="info" openCallout={calloutOpen} >
+          <div className="flex flex-col flex-1 ml-2">
+          <SignalBody weight="regular" size="2">
+            Nama Pengguna : {movieList.nama}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Umur : {movieList.umur}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Alamat : {movieList.alamat}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Email : {movieList.email}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Nomor_telepon : {movieList.nomor_telepon}
+          </SignalBody>
+          </div>
+        </SignalCallout>
+      </div>
+
+      <div>
+        <SignalBreadcrumb items={breadcrumbItems} ></SignalBreadcrumb>
+      </div>
+
+      <div className="border border-gray-300 max-w-[1000px] m-auto p-5 rounded-md mb-5">
+      <div className="flex flex-wrap ">
+        {movieList.movies.map((movie, index) => (
+          <div key={index} className="w-1/2 lg:w-1/3 p-2 card-product">
+            <SignalCard className="">
+              <div className="flex flex-col">
+                <img src={movie.imgSrc} alt={movie.title} className="" />
+                <div className="flex flex-col">
+                  <SignalBody>{movie.title}</SignalBody>
+                  <SignalBody>{movie.genre}</SignalBody>
+                  <SignalBody>{movie.rating}</SignalBody>
+                  <div className="flex space-x-2">
+                    {movie.jadwal_tayang.map((jadwal, idx) => (
+                      <SignalChips
+                        key={idx}
+                        data={jadwal}
+                        onClick={() => handleChipClick(index)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SignalCard>
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+    
+
+
+
+
+
+
+    </div>
   )
 }
 
