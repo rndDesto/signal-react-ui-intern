@@ -22,9 +22,9 @@ const MiniApp = () => {
             "title": "Mission Impossible",
             "genre": "Action",
             "jadwal_tayang": [
-              "12:00",
-              "15:00",
-              "18:00"
+              {"name": "12:00", "isSelected": true},
+              {"name": "15:00", "isSelected": false},
+              {"name": "18:00", "isSelected": true}
             ],
             "durasi": "140 menit",
             "sinopsis": "Seorang agen rahasia harus menggagalkan rencana jahat yang mengancam dunia.",
@@ -44,9 +44,9 @@ const MiniApp = () => {
             "title": "Inception",
             "genre": "Science Fiction",
             "jadwal_tayang": [
-              "13:00",
-              "16:00",
-              "19:00"
+              {"name": "13:00", "isSelected": false},
+              {"name": "16:00", "isSelected": true},
+              {"name": "19:00", "isSelected": true}
             ],
             "durasi": "148 menit",
             "sinopsis": "Seorang pencuri pikiran harus melakukan misi yang penuh intrik dalam mimpi orang lain.",
@@ -66,9 +66,9 @@ const MiniApp = () => {
             "title": "The Shawshank Redemption",
             "genre": "Drama",
             "jadwal_tayang": [
-              "14:00",
-              "17:00",
-              "20:00"
+              {"name": "14:00", "isSelected": true},
+              {"name": "17:00", "isSelected": false},
+              {"name": "20:00", "isSelected": true}
             ],
             "durasi": "142 menit",
             "sinopsis": "Seorang pria salah dituduh dan dihukum penjara seumur hidup, mencari keadilan dan persahabatan di penjara Shawshank.",

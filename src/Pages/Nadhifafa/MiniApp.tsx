@@ -8,44 +8,73 @@ const MiniApp = () => {
           {
             "nama": "dr. John Doe",
             "poli": "Anak",
-            "jadwal": ["08:00", "10:00", "12:00", "13:00"],
             "rumah_sakit": "Rumah Sakit ABC",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "08:00", "isDisabled": true},
+              {"name": "10:00", "isDisabled": false},
+              {"name": "12:00", "isDisabled": true},
+              {"name": "13:00", "isDisabled": false}
+            ]
           },
           {
             "nama": "dr. Jane Smith",
             "poli": "Anak",
-            "jadwal": ["12:00", "14:00", "20:00", "20:00"],
             "rumah_sakit": "Rumah Sakit XYZ",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "12:00", "isDisabled": false},
+              {"name": "14:00", "isDisabled": true},
+              {"name": "20:00", "isDisabled": true},
+              {"name": "20:00", "isDisabled": false}
+            ]
           },
           {
             "nama": "dr. David Wilson",
             "poli": "Anak",
-            "jadwal": ["08:00", "09:00", "10:00", "11:00"],
             "rumah_sakit": "Rumah Sakit ABC",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "08:00", "isDisabled": true},
+              {"name": "09:00", "isDisabled": true},
+              {"name": "10:00", "isDisabled": false},
+              {"name": "11:00", "isDisabled": true}
+            ]
           },
           {
             "nama": "dr. Sarah Lee",
             "poli": "Gigi",
-            "jadwal": ["09:00", "13:00", "14:00", "20:00"],
             "rumah_sakit": "Rumah Sakit DEF",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "09:00", "isDisabled": false},
+              {"name": "13:00", "isDisabled": true},
+              {"name": "14:00", "isDisabled": false},
+              {"name": "20:00", "isDisabled": true}
+            ]
           },
           {
             "nama": "dr. Michael Brown",
             "poli": "Gigi",
-            "jadwal": ["10:00", "11:00", "12:00", "13:00"],
             "rumah_sakit": "Rumah Sakit XYZ",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "10:00", "isDisabled": true},
+              {"name": "11:00", "isDisabled": true},
+              {"name": "12:00", "isDisabled": false},
+              {"name": "13:00", "isDisabled": false}
+            ]
           },
           {
             "nama": "dr. Emily Johnson",
             "poli": "Mata",
-            "jadwal": ["08:00", "15:00", "20:00"],
             "rumah_sakit": "Rumah Sakit PQR",
-            "photo": "https://placehold.co/160x200"
+            "photo": "https://placehold.co/160x200",
+            "jadwal": [
+              {"name": "08:00", "isDisabled": false},
+              {"name": "15:00", "isDisabled": true},
+              {"name": "20:00", "isDisabled": false}
+            ]
           }
         ]
       }
