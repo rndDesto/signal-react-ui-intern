@@ -108,7 +108,7 @@ const MiniApp = () => {
     movieList.movies.map(() => true)
   );
 
-  const handleChipClick = (movieIndex, jadwalIndex) => {
+  const handleChipClick = (movieIndex:any, jadwalIndex:any) => {
     setMovieData((prevMovies) =>
       prevMovies.map((movie, i) => {
         if (i === movieIndex) {
