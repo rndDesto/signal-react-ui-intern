@@ -5,6 +5,7 @@ import SignalCallout from "../../Components/Agil/Callout/signalCallout"
 import SignalCard from "../../Components/Agil/Card/SignalCard"
 import SignalChips from "../../Components/Nadhifa/Chips/Chips"
 import SignalBody from "../../Components/Agil/Body/SignalBody"
+import SignalSnackBar from "../../Components/Nadhifa/SnackBar/signalSnackBar"
 
 
 
@@ -96,10 +97,10 @@ const MiniApp = () => {
 
 
       const [calloutOpen] = useState(true);
-      const [isButtonDisabled, setButtonDisabled] = useState(true);
-
-
       const [movieData, setMovieData] = useState(movieList.movies);
+      const [snackBarVisible, setSnackBarVisible] = useState(false);
+
+
 
 
   // Buat state untuk menyimpan status disabled untuk setiap film
@@ -107,7 +108,7 @@ const MiniApp = () => {
     movieList.movies.map(() => true)
   );
 
-  const handleChipClick = (movieIndex, jadwalIndex) => {
+  const handleChipClick = (movieIndex:any, jadwalIndex:any) => {
     setMovieData((prevMovies) =>
       prevMovies.map((movie, i) => {
         if (i === movieIndex) {
@@ -134,13 +135,13 @@ const MiniApp = () => {
   };
   console.log(SignalButton);
   
+  const handleButtonClick = () => {
+    setSnackBarVisible(true);
+  };
+  
 
   return (
-
-
-
     <div>
-
       <div >
       <SignalCallout color="info" openCallout={calloutOpen} >
           <div className="flex flex-col flex-1 ml-2">
@@ -191,24 +192,23 @@ const MiniApp = () => {
                     ))}
                   </div>
                 </div>
-                <SignalButton variant="1" color="info" size="medium" full={true}  disable={buttonDisabledState[movieIndex]}  namaButton="Pesan"  ></SignalButton>
+                <SignalButton variant="1" color="info" size="medium" full={true}  disable={buttonDisabledState[movieIndex]} onClick={handleButtonClick}  namaButton="Pesan"  ></SignalButton>
               </div>
             </SignalCard>
             </div>
           </div>
         ))}
-      </div>
-    </div>
-
-
-    
-
-
-
-
-
-
-    </div>
+       </div>
+     </div>
+     {snackBarVisible && (
+        <SignalSnackBar sticky="false">
+          <div className="flex justify-between m-2">
+            <div className="grow">selamat anda telah memesan tiket</div>
+            <div className="grow-0" onClick={() => setSnackBarVisible(false)}>Retry</div>
+          </div>
+        </SignalSnackBar>
+      )}
+  </div>
   )
 }
 
