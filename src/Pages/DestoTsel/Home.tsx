@@ -607,7 +607,7 @@ const Home = () => {
 
 
 
-      {/* {dataPasien.listDokter.map((dokter, index) => (
+      {dataPasien.listDokter.map((dokter, index) => (
         <div key={index} className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
           <div className='flex gap-2 items-center'>
             <div>
@@ -665,7 +665,7 @@ const Home = () => {
             </div>
           </div>
       </div>
-    ))} */}
+    ))}
 
 
       <div className='border mt-5 border-gray-300 max-w-[1200px] m-auto p-5 rounded-md'>
