@@ -22,9 +22,9 @@ const MiniApp = () => {
             "title": "Mission Impossible",
             "genre": "Action",
             "jadwal_tayang": [
-              {"name": "12:00", "isSelected": true},
+              {"name": "12:00", "isSelected": false},
               {"name": "15:00", "isSelected": false},
-              {"name": "18:00", "isSelected": true}
+              {"name": "18:00", "isSelected": false}
             ],
             "durasi": "140 menit",
             "sinopsis": "Seorang agen rahasia harus menggagalkan rencana jahat yang mengancam dunia.",
@@ -45,8 +45,8 @@ const MiniApp = () => {
             "genre": "Science Fiction",
             "jadwal_tayang": [
               {"name": "13:00", "isSelected": false},
-              {"name": "16:00", "isSelected": true},
-              {"name": "19:00", "isSelected": true}
+              {"name": "16:00", "isSelected": false},
+              {"name": "19:00", "isSelected": false}
             ],
             "durasi": "148 menit",
             "sinopsis": "Seorang pencuri pikiran harus melakukan misi yang penuh intrik dalam mimpi orang lain.",
@@ -66,9 +66,9 @@ const MiniApp = () => {
             "title": "The Shawshank Redemption",
             "genre": "Drama",
             "jadwal_tayang": [
-              {"name": "14:00", "isSelected": true},
+              {"name": "14:00", "isSelected": false},
               {"name": "17:00", "isSelected": false},
-              {"name": "20:00", "isSelected": true}
+              {"name": "20:00", "isSelected": false}
             ],
             "durasi": "142 menit",
             "sinopsis": "Seorang pria salah dituduh dan dihukum penjara seumur hidup, mencari keadilan dan persahabatan di penjara Shawshank.",
@@ -95,18 +95,31 @@ const MiniApp = () => {
         { name: 'Address', href: '/address' }
       ]
 
+      // const data = movieList.movies
 
-
-      const [data, setData] = useState(movieList);
       const [calloutOpen] = useState(true);
-      const handleChipClick = (index: number) => {
-        setData((prevState) =>
-          prevState.map((item, i) => ({
-            ...item,
-            isSelected: i === index,
-          }))
+
+      const [movieData, setMovieData] = useState(movieList.movies);
+
+      const handleChipClick = (movieIndex, jadwalIndex) => {
+        setMovieData((prevMovies) =>
+          prevMovies.map((movie, i) => {
+            if (i === movieIndex) {
+              return {
+                ...movie,
+                jadwal_tayang: movie.jadwal_tayang.map((jadwal, idx) => ({
+                  ...jadwal,
+                  isSelected: idx === jadwalIndex,
+                })),
+              };
+            }
+            return movie;
+          })
         );
       };
+
+
+
 
     
     
@@ -145,27 +158,32 @@ const MiniApp = () => {
 
       <div className="border border-gray-300 max-w-[1000px] m-auto p-5 rounded-md mb-5">
       <div className="flex flex-wrap ">
-        {movieList.movies.map((movie, index) => (
-          <div key={index} className="w-1/2 lg:w-1/3 p-2 card-product">
-            <SignalCard className="">
+      {movieData.map((movie, movieIndex) => (
+          <div key={movieIndex} className="w-1/2 lg:w-1/3 p-2 card-product">
+            <div className="shadow-sm border border-gray-300 p-5 rounded-xl">
+            <SignalCard>
               <div className="flex flex-col">
                 <img src={movie.imgSrc} alt={movie.title} className="" />
                 <div className="flex flex-col">
                   <SignalBody>{movie.title}</SignalBody>
                   <SignalBody>{movie.genre}</SignalBody>
                   <SignalBody>{movie.rating}</SignalBody>
+                  <SignalBody>Jadwal :</SignalBody>
                   <div className="flex space-x-2">
-                    {movie.jadwal_tayang.map((jadwal, idx) => (
-                      <SignalChips
-                        key={idx}
-                        data={jadwal}
-                        onClick={() => handleChipClick(index)}
-                      />
+                  {movie.jadwal_tayang.map((jadwal, jadwalIndex) => (
+                  <SignalChips
+                    key={jadwalIndex}
+                    data={jadwal}
+                    onClick={() => handleChipClick(movieIndex, jadwalIndex)}
+                    img=""
+                  />
                     ))}
                   </div>
                 </div>
+                <SignalButton variant="1" color="info" size="medium" full="true" disabled={!movie.jadwal_tayang.some((jadwal) => jadwal.isSelected)} namaButton="Pesan" ></SignalButton>
               </div>
             </SignalCard>
+            </div>
           </div>
         ))}
       </div>
