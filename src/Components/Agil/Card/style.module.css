@@ -3,7 +3,6 @@
     position: relative; 
     background-image: url( https://interactive-examples.mdn.mozilla.net/media/examples/balloon.jpg );
     background-size: cover;
-    height: 200px;
 }
 .background-white{
     background-color: white;

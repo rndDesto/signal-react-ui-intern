@@ -1,3 +1,10 @@
+import SignalBody from "../../Components/Agil/Body/SignalBody"
+import SignalCallout from "../../Components/Agil/Callout/signalCallout"
+import { useState } from "react"
+import SignalBreadcrumb from "../../Components/Zikri/Breadcrumb/SignalBreadcrumb"
+import SignalButton from "../../Components/Zikri/Button/Signal-Button"
+import SignalChips from "../../Components/Nadhifa/Chips/Chips"
+import SignalCard from "../../Components/Agil/Card/SignalCard"
 
 const MiniApp = () => {
 
@@ -300,9 +307,105 @@ const MiniApp = () => {
           }
         ]
       }
+
+  const [calloutOpen] = useState(true); //untuk callout
+  const breadcrumbItems = [
+    { name: 'Home', href: '/zikri' },
+    { name: 'Button', href: '/button' },
+    { name: 'Tab', href: '/tab' },
+    { name: 'Typography', href: '/typography' }
+  ]
+  const [data, setData] = useState();
+  const handleChipClick = (index: number) => {
+    setData((prevState) =>
+      prevState.map((item, i) => ({
+        ...item,
+        isSelected: i === index,
+      }))
+    );
+  };
+  const mantul= maskapai.flights
+  console.log(maskapai)
+  console.log('mantul=',mantul)
+  console.log('perbandingan=',maskapai.flights===mantul)
+
+
+
+
   return (
-    <div>Nama Penumpang: {maskapai.pessangerName}</div>
-  )
+    <>
+    <div>
+       <SignalCallout color='error' openCallout={calloutOpen} >
+          <div className="flex flex-col flex-1 ml-2">
+          <SignalBody weight="regular" size="2">
+            From: {maskapai.from}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            To: {maskapai.to}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Name: {maskapai.pessangerName}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Email: {maskapai.pessangerEmail}
+          </SignalBody>
+          <SignalBody weight="regular" size="2">
+            Phone: {maskapai.pessangerPhone}
+          </SignalBody>
+          </div>
+        </SignalCallout>
+    </div>
+    <div>
+      <SignalBreadcrumb items={breadcrumbItems}/>
+    </div>
+    
+      {maskapai.flights.map((flight, index) => (
+    <div className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
+
+      <SignalCard>
+          <div key={index} className='flex justify-between gap-5 items-center'>
+             <div>
+              <img src={flight.logo} />
+            </div>
+            <div className='grow'>
+              <SignalBody>{flight.nomor_penerbangan}</SignalBody>
+              <SignalBody>{flight.kelas}</SignalBody>
+              <div>
+                <div className="flex gap-1 flex-wrap">
+                  {flight.bagasi.map((bagasi,i ) => (
+                    <SignalChips
+                      key={i}
+                      data={bagasi}
+                      onClick={() => handleChipClick(index)} 
+                      img=''
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className='flex grow' >
+              <div>
+                <SignalBody>{flight.waktu_keberangkatan.status}</SignalBody>
+                <SignalBody>{flight.waktu_keberangkatan.jam}</SignalBody>
+              </div>
+              <div className='ml-4'>
+                <SignalBody>{flight.waktu_kedatangan.status}</SignalBody>
+                <SignalBody>{flight.waktu_kedatangan.jam}</SignalBody>
+              </div>
+            </div>
+            <div>
+              <SignalBody>{flight.harga}</SignalBody>
+              <div className="float-right py-3">
+                <SignalButton variant={1} color={'primary'} size={'small'} full={false} disable={false} namaButton="Pesan" />
+              </div>
+            </div>
+          </div>
+      </SignalCard>
+      </div>
+    ))}
+    
+    </>
+  ) 
 }
 
 export default MiniApp

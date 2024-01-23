@@ -31,7 +31,7 @@ const Home = () => {
       <h2>Button</h2>
     </div>
     <div className="border-2 border-gray-200">
-      <SignalButton variant={variant} color={color} size={size} full={full} disable={disable} namaButton="signal button" >bsbjabjb</SignalButton>
+      <SignalButton variant={variant} color={color} size={size} full={full} disable={disable} namaButton="signal button" >bwjhbcjbwj</SignalButton>
     </div>
     <div className="flex space-x-4" >
       <div className="flex-1">Name</div>
