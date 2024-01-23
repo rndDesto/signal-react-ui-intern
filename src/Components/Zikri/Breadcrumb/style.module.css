@@ -7,6 +7,10 @@
   content: "/";
   padding-right: 15px;
 }
+.contain:last-child:after {
+  content: "";
+  padding-right: 15px;
+}
 
 .dropdown-trigger {
   position: relative;
