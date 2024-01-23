@@ -4,7 +4,6 @@ import SignalButton from "../../Components/Zikri/Button/Signal-Button"
 import SignalCallout from "../../Components/Agil/Callout/signalCallout"
 import SignalCard from "../../Components/Agil/Card/SignalCard"
 import SignalChips from "../../Components/Nadhifa/Chips/Chips"
-import { SignalIcon } from "../../Components/Agil/icon/SignalIcon"
 import SignalBody from "../../Components/Agil/Body/SignalBody"
 
 
@@ -95,34 +94,46 @@ const MiniApp = () => {
         { name: 'Address', href: '/address' }
       ]
 
-      // const data = movieList.movies
 
       const [calloutOpen] = useState(true);
+      const [isButtonDisabled, setButtonDisabled] = useState(true);
+
 
       const [movieData, setMovieData] = useState(movieList.movies);
 
-      const handleChipClick = (movieIndex, jadwalIndex) => {
-        setMovieData((prevMovies) =>
-          prevMovies.map((movie, i) => {
-            if (i === movieIndex) {
-              return {
-                ...movie,
-                jadwal_tayang: movie.jadwal_tayang.map((jadwal, idx) => ({
-                  ...jadwal,
-                  isSelected: idx === jadwalIndex,
-                })),
-              };
-            }
-            return movie;
-          })
-        );
-      };
 
+  // Buat state untuk menyimpan status disabled untuk setiap film
+  const [buttonDisabledState, setButtonDisabledState] = useState(
+    movieList.movies.map(() => true)
+  );
 
+  const handleChipClick = (movieIndex, jadwalIndex) => {
+    setMovieData((prevMovies) =>
+      prevMovies.map((movie, i) => {
+        if (i === movieIndex) {
+          const updatedJadwalTayang = movie.jadwal_tayang.map((jadwal, idx) => ({
+            ...jadwal,
+            isSelected: idx === jadwalIndex,
+          }));
 
+          // Update state hanya untuk film tertentu
+          setButtonDisabledState((prev) =>
+            prev.map((prevItem, prevIndex) =>
+              prevIndex === movieIndex ? !updatedJadwalTayang[jadwalIndex].isSelected : prevItem
+            )
+          );
 
-    
-    
+          return {
+            ...movie,
+            jadwal_tayang: updatedJadwalTayang,
+          };
+        }
+        return movie;
+      })
+    );
+  };
+  console.log(SignalButton);
+  
 
   return (
 
@@ -180,7 +191,7 @@ const MiniApp = () => {
                     ))}
                   </div>
                 </div>
-                <SignalButton variant="1" color="info" size="medium" full="true" disabled={!movie.jadwal_tayang.some((jadwal) => jadwal.isSelected)} namaButton="Pesan" ></SignalButton>
+                <SignalButton variant="1" color="info" size="medium" full={true}  disable={buttonDisabledState[movieIndex]}  namaButton="Pesan"  ></SignalButton>
               </div>
             </SignalCard>
             </div>
