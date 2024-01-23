@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SignalButton from '../../Components/Button/Button'
 import Button from '../../Components/Desto/Button/Button'
 import { Images } from '../../Components/Desto/Images/Images'
