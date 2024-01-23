@@ -457,9 +457,142 @@ const Home = () => {
         "nomor_tiket": "T12347",
         "lokasi_teater": "Teater XYZ",
         "harga_tiket": "Rp 110.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "The Dark Knight",
+        "genre": "Action",
+        "jadwal_tayang": [
+          {"name": "15:30", "isSelected": true},
+          {"name": "18:30", "isSelected": false},
+          {"name": "21:30", "isSelected": true}
+        ],
+        "durasi": "152 menit",
+        "sinopsis": "Batman harus menghadapi ancaman baru di Gotham City, Joker, seorang penjahat psikopat yang ingin menciptakan kekacauan. Pertempuran antara kegelapan dan kejahatan mencapai puncaknya dalam film ini.",
+        "tanggal_rilis": "18 Juli 2008",
+        "sutradara": "Christopher Nolan",
+        "aktor_utama": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+        "rating": "9.0/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "Warner Bros. Pictures",
+        "nomor_tiket": "T12349",
+        "lokasi_teater": "Teater XYZ",
+        "harga_tiket": "Rp 125.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "Pulp Fiction",
+        "genre": "Crime",
+        "jadwal_tayang": [
+          {"name": "14:30", "isSelected": true},
+          {"name": "17:30", "isSelected": false},
+          {"name": "20:30", "isSelected": true}
+        ],
+        "durasi": "154 menit",
+        "sinopsis": "Film ini mengisahkan sejumlah cerita yang terjalin bersama, termasuk seorang gangster, seorang petinju, dan seorang penipu. Mereka terlibat dalam situasi yang semakin rumit dan berbahaya.",
+        "tanggal_rilis": "14 Oktober 1994",
+        "sutradara": "Quentin Tarantino",
+        "aktor_utama": ["John Travolta", "Samuel L. Jackson", "Uma Thurman"],
+        "rating": "8.9/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "Miramax Films",
+        "nomor_tiket": "T12350",
+        "lokasi_teater": "Teater LMN",
+        "harga_tiket": "Rp 115.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "The Godfather",
+        "genre": "Crime",
+        "jadwal_tayang": [
+          {"name": "15:00", "isSelected": true},
+          {"name": "18:00", "isSelected": false},
+          {"name": "21:00", "isSelected": true}
+        ],
+        "durasi": "175 menit",
+        "sinopsis": "Film ini mengisahkan keluarga mafia Italia yang terlibat dalam kehidupan kriminal di Amerika Serikat. Sang Pemimpin keluarga, Don Vito Corleone, berusaha menjaga kekuasaan dan menjalani hidup keluarga yang kompleks.",
+        "tanggal_rilis": "24 Maret 1972",
+        "sutradara": "Francis Ford Coppola",
+        "aktor_utama": ["Marlon Brando", "Al Pacino", "James Caan"],
+        "rating": "9.2/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "Paramount Pictures",
+        "nomor_tiket": "T12351",
+        "lokasi_teater": "Teater XYZ",
+        "harga_tiket": "Rp 130.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "Avatar",
+        "genre": "Science Fiction",
+        "jadwal_tayang": [
+          {"name": "14:00", "isSelected": true},
+          {"name": "17:00", "isSelected": false},
+          {"name": "20:00", "isSelected": true}
+        ],
+        "durasi": "162 menit",
+        "sinopsis": "Film ini mengisahkan petualangan seorang marinir yang terlibat dalam eksplorasi planet Pandora yang penuh dengan keajaiban alam dan makhluk asing. Dia harus memilih antara kewajibannya dan cinta yang tak terduga.",
+        "tanggal_rilis": "18 Desember 2009",
+        "sutradara": "James Cameron",
+        "aktor_utama": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+        "rating": "7.8/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "20th Century Fox",
+        "nomor_tiket": "T12352",
+        "lokasi_teater": "Teater ABC",
+        "harga_tiket": "Rp 125.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "Forrest Gump",
+        "genre": "Drama",
+        "jadwal_tayang": [
+          {"name": "15:30", "isSelected": true},
+          {"name": "18:30", "isSelected": false},
+          {"name": "21:30", "isSelected": true}
+        ],
+        "durasi": "142 menit",
+        "sinopsis": "Film ini mengisahkan tentang kehidupan seorang pria sederhana bernama Forrest Gump, yang tanpa disadarinya terlibat dalam berbagai peristiwa penting dalam sejarah Amerika Serikat.",
+        "tanggal_rilis": "6 Juli 1994",
+        "sutradara": "Robert Zemeckis",
+        "aktor_utama": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+        "rating": "8.8/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "Paramount Pictures",
+        "nomor_tiket": "T12353",
+        "lokasi_teater": "Teater XYZ",
+        "harga_tiket": "Rp 120.000"
+      },
+      {
+        "imgSrc": "https://placehold.co/200x200",
+        "title": "Interstellar",
+        "genre": "Science Fiction",
+        "jadwal_tayang": [
+          {"name": "14:00", "isSelected": true},
+          {"name": "17:00", "isSelected": false},
+          {"name": "20:00", "isSelected": true}
+        ],
+        "durasi": "169 menit",
+        "sinopsis": "Film ini mengisahkan perjalanan sekelompok astronaut ke luar angkasa untuk menemukan planet baru yang dapat menjadi tempat tinggal manusia, karena bumi menghadapi krisis ekologi yang serius.",
+        "tanggal_rilis": "7 November 2014",
+        "sutradara": "Christopher Nolan",
+        "aktor_utama": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+        "rating": "8.6/10 (IMDb)",
+        "bahasa": "Inggris",
+        "negara_asal": "Amerika Serikat",
+        "studio_produksi": "Warner Bros. Pictures",
+        "nomor_tiket": "T12354",
+        "lokasi_teater": "Teater ABC",
+        "harga_tiket": "Rp 125.000"
       }
     ]
   }
+
 
   return (
     <div>
@@ -474,7 +607,7 @@ const Home = () => {
 
 
 
-      {dataPasien.listDokter.map((dokter, index) => (
+      {/* {dataPasien.listDokter.map((dokter, index) => (
         <div key={index} className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
           <div className='flex gap-2 items-center'>
             <div>
@@ -532,14 +665,14 @@ const Home = () => {
             </div>
           </div>
       </div>
-    ))}
+    ))} */}
 
 
       <div className='border mt-5 border-gray-300 max-w-[1200px] m-auto p-5 rounded-md'>
         <div className="flex gap-3">
-          {movieList.movies.map((movie, index) => (
+          {movieList?.movies.map((movie, indexMovie) => (
             <div
-              key={index}
+              key={indexMovie}
               className="w-1/3 border border-gray-300 p-5 rounded-md shadow-lg hover:shadow-xl transition duration-300"
             >
               <img src={movie.imgSrc} alt={movie.title} className="w-48 h-48 mx-auto mb-3" />
@@ -551,8 +684,8 @@ const Home = () => {
               <div className="mb-2">
                   <div>Jadwal:</div>
                     <div className="flex gap-1 flex-wrap">
-                    {movie.jadwal_tayang.map((jadwal, idx) => (
-                      <div key={idx} className='border px-2 rounded-s-md'>{jadwal.name}</div>
+                    {movie.jadwal_tayang.map((jadwal, indexJam) => (
+                      <div onClick={()=>pilihJam(indexJam, indexMovie)} key={indexJam} className='border px-2 rounded-s-md'>{jadwal.name} - {jadwal.isSelected ? 'mantuljaya':'kerenjaya'}</div>
                     ))}
                     </div>
                   </div>
