@@ -512,7 +512,7 @@ const Home = () => {
           {"name": "21:00", "isSelected": true}
         ],
         "durasi": "175 menit",
-        "sinopsis": "Film ini mengisahkan keluarga mafia Italia yang terlibat dalam kehidupan kriminal di Amerika Serikat. Sang Pemimpin keluarga, Don Vito Corleone, berusaha menjaga kekuasaan dan menjalani hidup keluarga yang kompleks."
+        "sinopsis": "Film ini mengisahkan keluarga mafia Italia yang terlibat dalam kehidupan kriminal di Amerika Serikat. Sang Pemimpin keluarga, Don Vito Corleone, berusaha menjaga kekuasaan dan menjalani hidup keluarga yang kompleks.",
         "tanggal_rilis": "24 Maret 1972",
         "sutradara": "Francis Ford Coppola",
         "aktor_utama": ["Marlon Brando", "Al Pacino", "James Caan"],
@@ -534,7 +534,7 @@ const Home = () => {
           {"name": "20:00", "isSelected": true}
         ],
         "durasi": "162 menit",
-        "sinopsis": "Film ini mengisahkan petualangan seorang marinir yang terlibat dalam eksplorasi planet Pandora yang penuh dengan keajaiban alam dan makhluk asing. Dia harus memilih antara kewajibannya dan cinta yang tak terduga."
+        "sinopsis": "Film ini mengisahkan petualangan seorang marinir yang terlibat dalam eksplorasi planet Pandora yang penuh dengan keajaiban alam dan makhluk asing. Dia harus memilih antara kewajibannya dan cinta yang tak terduga.",
         "tanggal_rilis": "18 Desember 2009",
         "sutradara": "James Cameron",
         "aktor_utama": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
@@ -593,23 +593,6 @@ const Home = () => {
     ]
   }
 
-  const [dataMovie, setDataMovie] = useState(null)
-
-  useEffect(()=>{
-    setDataMovie(movieList)
-  },[])
-  
-  
-  const pilihJam = (indexJam, indexMovie) =>{
-    const updatedMovieList = { ...dataMovie }; 
-    updatedMovieList.movies[indexMovie].jadwal_tayang[indexJam].isSelected = !updatedMovieList.movies[indexMovie].jadwal_tayang[indexJam].isSelected;
-    setDataMovie(updatedMovieList);
-
-
-    console.log("dataMovie = ", dataMovie)
-    console.log("updatedMovieList = ", updatedMovieList)
-
-  }
 
   return (
     <div>
@@ -687,7 +670,7 @@ const Home = () => {
 
       <div className='border mt-5 border-gray-300 max-w-[1200px] m-auto p-5 rounded-md'>
         <div className="flex gap-3">
-          {dataMovie?.movies.map((movie, indexMovie) => (
+          {movieList?.movies.map((movie, indexMovie) => (
             <div
               key={indexMovie}
               className="w-1/3 border border-gray-300 p-5 rounded-md shadow-lg hover:shadow-xl transition duration-300"
