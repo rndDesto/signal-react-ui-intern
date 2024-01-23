@@ -315,15 +315,25 @@ const MiniApp = () => {
     { name: 'Tab', href: '/tab' },
     { name: 'Typography', href: '/typography' }
   ]
-  const [data, setData] = useState();
-  const handleChipClick = (index: number) => {
-    setData((prevState) =>
-      prevState.map((item, i) => ({
-        ...item,
-        isSelected: i === index,
-      }))
-    );
-  };
+
+  
+  const [beratData, setBeratData] = useState(maskapai.flights);
+  const handleChipClick = (beratIndex, bagasiIndex) => {
+    setBeratData((prevBerat) =>
+      prevBerat.map((maskapai,i) => {
+        if (i === beratIndex) {
+          return{
+            ...maskapai,
+            bagasi: maskapai.bagasi.map((bagasi, idx) => ({
+              ...bagasi,
+              isSelected: idx === bagasiIndex,
+            })),
+          };
+        }
+        return maskapai
+    }))
+  } 
+
   const mantul= maskapai.flights
   console.log(maskapai)
   console.log('mantul=',mantul)
@@ -359,11 +369,11 @@ const MiniApp = () => {
       <SignalBreadcrumb items={breadcrumbItems}/>
     </div>
     
-      {maskapai.flights.map((flight, index) => (
+      {beratData.map((flight, beratIndex) => (
     <div className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
 
       <SignalCard>
-          <div key={index} className='flex justify-between gap-5 items-center'>
+          <div key={beratIndex} className='flex justify-between gap-5 items-center'>
              <div>
               <img src={flight.logo} />
             </div>
@@ -372,11 +382,11 @@ const MiniApp = () => {
               <SignalBody>{flight.kelas}</SignalBody>
               <div>
                 <div className="flex gap-1 flex-wrap">
-                  {flight.bagasi.map((bagasi,i ) => (
+                  {flight.bagasi.map((bagasi,bagasiIndex ) => (
                     <SignalChips
-                      key={i}
+                      key={bagasiIndex}
                       data={bagasi}
-                      onClick={() => handleChipClick(index)} 
+                      onClick={() => handleChipClick(beratIndex,bagasiIndex)} 
                       img=''
                     />
                   ))}
@@ -394,10 +404,10 @@ const MiniApp = () => {
               </div>
             </div>
             <div>
+              <div className='text-end'>
               <SignalBody>{flight.harga}</SignalBody>
-              <div className="float-right py-3">
-                <SignalButton variant={1} color={'primary'} size={'small'} full={false} disable={false} namaButton="Pesan" />
               </div>
+              <SignalButton variant={1} color={'primary'} size={'small'} full={true} disable={false} namaButton="Pesan" />
             </div>
           </div>
       </SignalCard>
