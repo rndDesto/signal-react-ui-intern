@@ -685,7 +685,7 @@ const Home = () => {
                   <div>Jadwal:</div>
                     <div className="flex gap-1 flex-wrap">
                     {movie.jadwal_tayang.map((jadwal, indexJam) => (
-                      <div onClick={()=>pilihJam(indexJam, indexMovie)} key={indexJam} className='border px-2 rounded-s-md'>{jadwal.name} - {jadwal.isSelected ? 'mantuljaya':'kerenjaya'}</div>
+                      <div key={indexJam} className='border px-2 rounded-s-md'>{jadwal.name} - {jadwal.isSelected ? 'mantuljaya':'kerenjaya'}</div>
                     ))}
                     </div>
                   </div>
