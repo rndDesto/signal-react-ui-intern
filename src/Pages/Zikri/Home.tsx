@@ -30,7 +30,7 @@ const Home = () => {
     <div className='class="border-b-2 border-gray-100 mb-4 p-2 font-bold text-4xl'>
       <h2>Button</h2>
     </div>
-    <div className="border-2 border-gray-200">
+    <div className="border-2 py-2 border-gray-200">
       <SignalButton variant={variant} color={color} size={size} full={full} disable={disable} namaButton="signal button" >bwjhbcjbwj</SignalButton>
     </div>
     <div className="flex space-x-4" >

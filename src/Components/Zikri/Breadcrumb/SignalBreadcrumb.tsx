@@ -8,10 +8,10 @@ const SignalBreadcrumb = (props:any  ) => {
   const generateBreadcrumb = () => {
     if (items.length <= 4) {
       return (
-        <ul className="flex text-xl">
+        <ul className="flex  text-lg">
           {items.map((item:any , index:any) => (
             <li className={styles['contain']} key={index}>
-              <Link to={item.href} className="text-xl text-black">{item.name}</Link>
+              <Link to={item.href} className=" text-lg text-black hover:text-black">{item.name}</Link>
             </li>
           ))}
           
@@ -21,22 +21,22 @@ const SignalBreadcrumb = (props:any  ) => {
       const displayedItems = items.slice(0, MAX_DISPLAY_ITEMS);
 
       return (
-        <ul className="flex text-xl">
+        <ul className="flex  text-lg">
           {displayedItems.map((item:any, index:any) => (
             <li className={styles['contain']} key={index}>
-              <Link to={item.href} className="text-xl text-black">{item.name}</Link>
+              <Link to={item.href} className=" text-lg text-black hover:text-black">{item.name}</Link>
             </li>
           ))}
           {items.length > 4 && (
             <li className={styles['contain']}>
-              <span className={`${styles['dropdown-trigger']} text-xl text-black`}>
+              <span className={`${styles['dropdown-trigger']}  text-lg text-black hover:text-black`}>
                 <div>
                   <p>...</p>
                   <div className={styles['dropdown']}>
                     <ul>
                       {items.slice(MAX_DISPLAY_ITEMS, -2).map((item:any, index:any) => (
                         <li key={index}>
-                          <Link to={item.href} className="text-xl text-black">{item.name}</Link>
+                          <Link to={item.href} className=" text-lg text-black hover:text-black">{item.name}</Link>
                         </li>
                       ))}
                     </ul>
@@ -46,10 +46,10 @@ const SignalBreadcrumb = (props:any  ) => {
             </li>
           )}
           <li className={styles['contain']}>
-            <Link to={items[items.length - 2].href} className="text-xl text-black">{items[items.length - 2].name}</Link>
+            <Link to={items[items.length - 2].href} className=" text-lg  text-black hover:text-black">{items[items.length - 2].name}</Link>
           </li>
           <li>
-            <Link to={items[items.length - 1].href} className="text-xl text-black">{items[items.length - 1].name}</Link>
+            <Link to={items[items.length - 1].href} className=" text-lg  text-black hover:text-black">{items[items.length - 1].name}</Link>
           </li>
         </ul>
       );
