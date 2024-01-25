@@ -12,7 +12,7 @@ const Home = () => {
             <div className="flex flex-col items-start">
               <Link className="text-blue-400" to="/nadhifa">Nadhifa</Link>
               <Link className="text-blue-400" to="/zikri">Zikri</Link>
-              <Link className="text-blue-400" to="/agil">Agil</Link>   
+              <Link className="text-blue-400" to="/agil">M Agil Faturrahman</Link>   
             </div>
           </div>
         </div>
