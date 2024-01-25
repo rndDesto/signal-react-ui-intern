@@ -309,13 +309,13 @@ const MiniApp = () => {
   };
 
   const [calloutOpen] = useState(true); //untuk callout
-  const breadcrumbItems = [
-    { name: "Home", href: "/zikri" },
-    { name: "Button", href: "/button" },
-    { name: "Tab", href: "/tab" },
-    { name: "Tab", href: "/tab" },
-    { name: "Typography", href: "/typography" },
-  ];
+  // const breadcrumbItems = [
+  //   { name: "Home", href: "/zikri" },
+  //   { name: "Button", href: "/button" },
+  //   { name: "Tab", href: "/tab" },
+  //   { name: "Tab", href: "/tab" },
+  //   { name: "Typography", href: "/typography" },
+  // ];
 
   const [beratData, setBeratData] = useState(maskapai.flights);
   const [buttonDisabledState, setButtonDisabledState] = useState(
@@ -326,6 +326,8 @@ const MiniApp = () => {
     setSnackBarVisible(true);
   };
 
+  const [selectedBagasi, setSelectedBagasi] = useState(null);
+
   const handleChipClick = (beratIndex, bagIndex) => {
     setBeratData((prevBerat) =>
       prevBerat.map((maskapai, i) => {
@@ -334,6 +336,15 @@ const MiniApp = () => {
             ...bagasi,
             isSelected: idx === bagIndex,
           }));
+
+          const selectedBagasiDetails = {
+            maskapai: maskapai.maskapai,
+            nomor_penerbangan: maskapai.nomor_penerbangan,
+            kelas: maskapai.kelas,
+            bagasi: updatedBagasi[bagIndex].name,
+          };
+
+          setSelectedBagasi(selectedBagasiDetails);
 
           setButtonDisabledState((prev) =>
             prev.map((prevItem, prevIndex) =>
@@ -352,6 +363,18 @@ const MiniApp = () => {
       })
     );
   };
+
+  const breadcrumbItems = selectedBagasi
+  ? [
+      { name: "Home", href: "/zikri" },
+      { name: selectedBagasi.maskapai},
+      { name: selectedBagasi.nomor_penerbangan},
+      { name: selectedBagasi.kelas},
+      { name: selectedBagasi.bagasi},
+    ]
+  : [{ name: "Home", href: "/zikri" }];
+
+ 
 
   const mantul = maskapai.flights;
   console.log(maskapai);
@@ -382,7 +405,7 @@ const MiniApp = () => {
         </SignalCallout>
       </div>
       <div className="m-2">
-        <SignalBreadcrumb items={breadcrumbItems} />
+      <SignalBreadcrumb items={breadcrumbItems} />
       </div>
       {beratData.map((flight, beratIndex) => (
         <div className="border border-gray-300 max-w-[1200px] m-2 p-5 rounded-md mb-5">
