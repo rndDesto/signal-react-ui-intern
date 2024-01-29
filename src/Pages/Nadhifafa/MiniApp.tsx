@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SignalChips from '../../Components/Nadhifa/Chips/Chips';
 import SignalSnackBar from '../../Components/Nadhifa/SnackBar/signalSnackBar';
 import SignalButton from '../../Components/Zikri/Button/Signal-Button'
@@ -97,7 +97,7 @@ const MiniApp = () => {
       const [buttonDisabledState, setButtonDisabledState] = useState(
         dataPasien.listDokter.map((_, index) => index !== selectedDokterIndex)
       );
-      const [selectedPoli, setSelectedPoli] = useState(null);
+      const [selectedPoli, setSelectedPoli] = useState<any>(null);
       
       const [calloutOpen] = useState(true);
       const breadcrumbItems = selectedJadwal
