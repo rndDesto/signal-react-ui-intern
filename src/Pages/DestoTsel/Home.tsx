@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SignalButton from '../../Components/Button/Button'
 import Button from '../../Components/Desto/Button/Button'
 import { Images } from '../../Components/Desto/Images/Images'
 import Label from '../../Components/Desto/Label/Label'
+import SignalChips from '../../Components/Nadhifa/Chips/Chips'
+import SignalBreadcrumb from '../../Components/Zikri/Breadcrumb/SignalBreadcrumb'
 
 const Home = () => {
   const [warna, setWarna] = useState('')
@@ -594,6 +596,61 @@ const Home = () => {
   }
 
 
+  const [filteredGenre, setFilteredGenre] = useState<any>([])
+  const [updatePoli,setUpdatePoli] = useState<any>(null)
+  const [breadList, setBreadList] = useState<any>([])
+ 
+ 
+ 
+  const chipsFilter = () => {
+    const uniqueGenres = [...new Set(dataPasien.listDokter.map(film => film.poli))];
+    const genreArray = uniqueGenres.map(name => ({
+      name: name,
+      isSelected: false,
+      imageUrl: "",
+      isDisabled: false,
+    }));
+
+    return genreArray
+  }
+ 
+  const handleChipClick = (index: number, selectedPoli:any) => {
+    const updateJadwal = dataPasien.listDokter.filter((pol) => {
+      return pol.poli === selectedPoli.name;
+    });
+ 
+    setUpdatePoli({ ...dataPasien, listDokter: updateJadwal });
+    setFilteredGenre((prevState:any) =>
+      prevState.map((item:any, i:any) => ({
+        ...item,
+        isSelected: i === index,
+      }))
+    );
+  };
+
+  const handleJadwalPraktek = (jadwal:any, index:number) => {
+
+    const selectedPoli = updatePoli?.listDokter[index]
+    setBreadList([
+      {name: selectedPoli?.rumah_sakit, href:''},
+      {name: selectedPoli?.poli, href:''},
+      {name: selectedPoli?.nama, href:''},
+      {name: jadwal.name, href:''},
+    ])
+
+    const jadwalIndex = selectedPoli?.jadwal.findIndex((j:any) => j.name === jadwal.name)
+    const newJadwal = selectedPoli?.jadwal.map((j:any, i:number) => ({...j, isSelected: i === jadwalIndex}))
+    setUpdatePoli({...updatePoli, listDokter: updatePoli?.listDokter.map((pol:any, i:number) => i === index ? {...pol, jadwal: newJadwal} : pol)})
+
+      
+  }
+ 
+  useEffect(()=>{
+    setUpdatePoli(dataPasien)
+    setFilteredGenre(chipsFilter())
+  },[])
+
+
   return (
     <div>
       <div className='bg-green-200 p-2 border border-green-700'>
@@ -604,10 +661,21 @@ const Home = () => {
       <p>Rs/dokter/poli</p>
 
       <p>Ekonomi Bisnis</p>
+      <div className='flex'>
+        {filteredGenre.map((genre:any, index:any) => (
+          <SignalChips
+            key={index}
+            data={genre}
+            img=""
+            onClick={() => handleChipClick(index, genre)} 
+            />
+        ))}
+      </div>
+      <SignalBreadcrumb items={breadList} />
 
 
 
-      {dataPasien.listDokter.map((dokter, index) => (
+      {updatePoli?.listDokter.map((dokter:any, index:any) => (
         <div key={index} className='border border-gray-300 max-w-[1200px] m-auto p-5 rounded-md mb-5'>
           <div className='flex gap-2 items-center'>
             <div>
@@ -621,8 +689,13 @@ const Home = () => {
               <p className='text-center text-lg font-bold'>{dokter.rumah_sakit}</p>
               <p className='text-center text-sm mb-5'>Jadwal Praktek</p>
               <div className='flex gap-2 flex-wrap justify-evenly'>
-                {dokter.jadwal.map((jadwal, jadwalIndex) => (
-                  <div key={jadwalIndex} className='border px-2 rounded-s-md'>{jadwal.name}</div>
+                {dokter.jadwal.map((jadwal:any, jadwalIndex:any) => (
+                  <SignalChips
+                  key={jadwalIndex}
+                  data={jadwal}
+                  img=""
+                  onClick={() => handleJadwalPraktek(jadwal, index, jadwalIndex)} 
+                  />
                 ))}
               </div>
             </div>
