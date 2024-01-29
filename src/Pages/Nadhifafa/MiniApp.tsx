@@ -92,7 +92,7 @@ const MiniApp = () => {
       
       const [Data, setData] = useState(dataPasien.listDokter);
       const [snackBarVisible, setSnackBarVisible] = useState(false);
-      const [selectedJadwal, setSelectedJadwal] = useState(null);
+      const [selectedJadwal, setSelectedJadwal] = useState<any>(null);
       const [selectedDokterIndex, setSelectedDokterIndex] = useState(null);
       const [buttonDisabledState, setButtonDisabledState] = useState(
         dataPasien.listDokter.map((_, index) => index !== selectedDokterIndex)
