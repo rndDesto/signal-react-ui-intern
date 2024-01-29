@@ -310,12 +310,12 @@ const MiniApp = () => {
 
   const [calloutOpen] = useState(true);
   const [beratData, setBeratData] = useState(maskapai.flights);
-  const [selectedBagasi, setSelectedBagasi] = useState(null);
+  const [selectedBagasi, setSelectedBagasi] = useState<any>(null);
   const [buttonDisabledState, setButtonDisabledState] = useState(
     maskapai.flights.map(() => true)
   );
   const [snackBarVisible, setSnackBarVisible] = useState(false);
-  const [selectedClasses, setSelectedClasses] = useState([]);
+  const [selectedClasses, setSelectedClasses] = useState<any>([]);
   const [breadcrumbItems, setBreadcrumbItems] = useState([
     { name: "Home", href: "/zikri" },
   ]);
@@ -387,9 +387,9 @@ const MiniApp = () => {
   const handleClassChipClick = (classType: any) => {
     console.log("classType", classType);
     console.log('selectedclasses',selectedClasses)
-    setSelectedClasses((prevClasses) =>
+    setSelectedClasses((prevClasses:any) =>
       prevClasses.includes(classType)
-        ? prevClasses.filter((a) => a !== classType)
+        ? prevClasses.filter((a:any) => a !== classType)
         : [...prevClasses, classType]
     );
 
