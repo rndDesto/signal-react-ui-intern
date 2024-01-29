@@ -308,27 +308,23 @@ const MiniApp = () => {
     ],
   };
 
-  const [calloutOpen] = useState(true); //untuk callout
-  // const breadcrumbItems = [
-  //   { name: "Home", href: "/zikri" },
-  //   { name: "Button", href: "/button" },
-  //   { name: "Tab", href: "/tab" },
-  //   { name: "Tab", href: "/tab" },
-  //   { name: "Typography", href: "/typography" },
-  // ];
-
+  const [calloutOpen] = useState(true);
   const [beratData, setBeratData] = useState(maskapai.flights);
+  const [selectedBagasi, setSelectedBagasi] = useState(null);
   const [buttonDisabledState, setButtonDisabledState] = useState(
     maskapai.flights.map(() => true)
   );
   const [snackBarVisible, setSnackBarVisible] = useState(false);
+  const [selectedClasses, setSelectedClasses] = useState([]);
+  const [breadcrumbItems, setBreadcrumbItems] = useState([
+    { name: "Home", href: "/zikri" },
+  ]);
+
   const handleButtonClick = () => {
     setSnackBarVisible(true);
   };
 
-  const [selectedBagasi, setSelectedBagasi] = useState(null);
-
-  const handleChipClick = (beratIndex, bagIndex) => {
+  const handleChipClick = (beratIndex: any, bagIndex: any) => {
     setBeratData((prevBerat) =>
       prevBerat.map((maskapai, i) => {
         if (i === beratIndex) {
@@ -343,8 +339,25 @@ const MiniApp = () => {
             kelas: maskapai.kelas,
             bagasi: updatedBagasi[bagIndex].name,
           };
+          console.log("selectedbagasidetail", selectedBagasiDetails);
 
           setSelectedBagasi(selectedBagasiDetails);
+
+          setBreadcrumbItems([
+            { name: "Home", href: "/zikri" },
+            {
+              name: selectedBagasiDetails.nomor_penerbangan,
+              href: `/nomor_penerbangan/${selectedBagasiDetails.nomor_penerbangan}`,
+            },
+            {
+              name: selectedBagasiDetails.kelas,
+              href: `/kelas/${selectedBagasiDetails.kelas}`,
+            },
+            {
+              name: selectedBagasiDetails.bagasi,
+              href: `/bagasi/${selectedBagasiDetails.bagasi}`,
+            },
+          ]);
 
           setButtonDisabledState((prev) =>
             prev.map((prevItem, prevIndex) =>
@@ -358,28 +371,44 @@ const MiniApp = () => {
             ...maskapai,
             bagasi: updatedBagasi,
           };
+        } else {
+          return {
+            ...maskapai,
+            bagasi: maskapai.bagasi.map((bagasi) => ({
+              ...bagasi,
+              isSelected: false,
+            })),
+          };
         }
-        return maskapai;
       })
     );
   };
 
-  const breadcrumbItems = selectedBagasi
-  ? [
-      { name: "Home", href: "/zikri" },
-      { name: selectedBagasi.maskapai},
-      { name: selectedBagasi.nomor_penerbangan},
-      { name: selectedBagasi.kelas},
-      { name: selectedBagasi.bagasi},
-    ]
-  : [{ name: "Home", href: "/zikri" }];
+  const handleClassChipClick = (classType: any) => {
+    console.log("classType", classType);
+    console.log('selectedclasses',selectedClasses)
+    setSelectedClasses((prevClasses) =>
+      prevClasses.includes(classType)
+        ? prevClasses.filter((a) => a !== classType)
+        : [...prevClasses, classType]
+    );
 
- 
+    setSelectedBagasi(null);
 
-  const mantul = maskapai.flights;
-  console.log(maskapai);
-  console.log("mantul=", mantul);
-  console.log("perbandingan=", maskapai.flights === mantul);
+    setButtonDisabledState(() =>
+      maskapai.flights.map((_, index) =>
+        selectedClasses.length === 0 ||
+        maskapai.flights[index].kelas === classType
+          ? !selectedBagasi
+          : true
+      )
+    );
+  };
+
+  const filteredFlights = beratData.filter(
+    (flight) =>
+      selectedClasses.length === 0 || selectedClasses.includes(flight.kelas)
+  );
 
   return (
     <>
@@ -403,11 +432,24 @@ const MiniApp = () => {
             </SignalBody>
           </div>
         </SignalCallout>
+        <div className="m-2">
+          <div className="flex gap-2">
+            {["Ekonomi", "Bisnis"].map((classType) => (
+              <SignalChips
+                key={classType}
+                data={{ name: classType }}
+                onClick={() => handleClassChipClick(classType)}
+                isSelected={selectedClasses.includes(classType)}
+                img=""
+              />
+            ))}
+          </div>
+        </div>
       </div>
       <div className="m-2">
-      <SignalBreadcrumb items={breadcrumbItems} />
+        <SignalBreadcrumb items={breadcrumbItems} />
       </div>
-      {beratData.map((flight, beratIndex) => (
+      {filteredFlights.map((flight, beratIndex) => (
         <div className="border border-gray-300 max-w-[1200px] m-2 p-5 rounded-md mb-5">
           <SignalCard>
             <div
@@ -462,7 +504,7 @@ const MiniApp = () => {
         </div>
       ))}
       {snackBarVisible && (
-        <SignalSnackBar sticky="false" color='warning' position="bottomEnd">
+        <SignalSnackBar sticky="false" color="warning" position="bottomEnd">
           <div className="text-justify">website ini masih dalam tahap beta</div>
         </SignalSnackBar>
       )}
