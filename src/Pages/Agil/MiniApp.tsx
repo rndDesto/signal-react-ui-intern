@@ -229,11 +229,15 @@ const MiniApp = () => {
       );
       const [selectedGenre, setSelectedGenre] = useState(null);
 
+      
+
 
 
  const handleChipClick = (filteredMovieIndex, jadwalIndex) => {
   setMovieData((prevMovies) =>
     prevMovies.map((movie, i) => {
+      console.log("mantul jaya",movie);
+      
       if (i === filteredMovieIndex) {
         const updatedJadwalTayang = movie.jadwal_tayang.map((jadwal, idx) => ({
           ...jadwal,
@@ -251,13 +255,11 @@ const MiniApp = () => {
         const isAtLeastOneSelected = updatedJadwalTayang.some(
           (jadwal) => jadwal.isSelected
         );
-
         setButtonDisabledState((prev) =>
           prev.map((prevItem, prevIndex) =>
             prevIndex === filteredMovieIndex ? !isAtLeastOneSelected : prevItem
           )
         );
-
         // Set selectedMovieIndex to the current movie index
         setSelectedMovieIndex(filteredMovieIndex);
 
@@ -286,6 +288,7 @@ const MiniApp = () => {
 
       const filteredMovies = selectedGenre
       ? movieData.filter((movie) => movie.genre === selectedGenre)
+      
       : movieData;
     
       const breadcrumbItems = selectedJadwal
@@ -303,6 +306,9 @@ const MiniApp = () => {
           setSnackBarVisible(false);
         }, 3000);
       };
+
+      
+      
     
 
   return (

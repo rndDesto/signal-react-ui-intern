@@ -706,7 +706,7 @@ const Home = () => {
         
         <Label rounded="2" bg={warna}>
           <Images w="30" height="30" src="https://cdn-icons-png.flaticon.com/128/665/665049.png" />
-          <p>data tidak ditemukan </p>
+          <p>data tidak  ditemukan </p>
           <SignalButton namaButton="oke, mengerti" warna="info" />
         </Label>
     </div>
