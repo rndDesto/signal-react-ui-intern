@@ -694,7 +694,7 @@ const Home = () => {
                   key={jadwalIndex}
                   data={jadwal}
                   img=""
-                  onClick={() => handleJadwalPraktek(jadwal, index, jadwalIndex)} 
+                  onClick={() => handleJadwalPraktek(jadwal, index)} 
                   />
                 ))}
               </div>
