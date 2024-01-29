@@ -592,6 +592,7 @@ const Home = () => {
       }
     ]
   }
+  
 
 
   return (
