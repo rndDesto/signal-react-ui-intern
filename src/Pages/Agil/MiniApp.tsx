@@ -219,21 +219,21 @@ const MiniApp = () => {
   }
 
 
-      const [calloutOpen, setCalloutOpen] = useState(true);
+      const [calloutOpen] = useState(true);
       const [movieData, setMovieData] = useState(movieList.movies);
       const [snackBarVisible, setSnackBarVisible] = useState(false);
-      const [selectedJadwal, setSelectedJadwal] = useState(null);
+      const [selectedJadwal, setSelectedJadwal] = useState<any>(null);
       const [selectedMovieIndex, setSelectedMovieIndex] = useState(null);
       const [buttonDisabledState, setButtonDisabledState] = useState(() =>
         movieList.movies.map((_, index) => index !== selectedMovieIndex)
       );
-      const [selectedGenre, setSelectedGenre] = useState(null);
+      const [selectedGenre, setSelectedGenre] = useState<any>(null);
 
       
 
 
 
- const handleChipClick = (filteredMovieIndex, jadwalIndex) => {
+ const handleChipClick = (filteredMovieIndex:any, jadwalIndex:any) => {
   setMovieData((prevMovies) =>
     prevMovies.map((movie, i) => {
       console.log("mantul jaya",movie);
@@ -244,7 +244,7 @@ const MiniApp = () => {
           isSelected: idx === jadwalIndex,
         }));
 
-        const selectedJadwalTayangDetails = {
+        const selectedJadwalTayangDetails:any = {
           title: movie.title,
           genre: movie.genre,
           jadwal_tayang: updatedJadwalTayang[jadwalIndex].name,
