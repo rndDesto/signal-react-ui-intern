@@ -218,74 +218,50 @@ const MiniApp = () => {
     ]
   }
 
-      const breadcrumbItems = [
-        { name: 'Home', href: '/' },
-        { name: 'Button', href: '/button' },
-        { name: 'Tab', href: '/tab' },
-        { name: 'Typography', href: '/typography' },
-        { name: 'Education', href: '/education' },
-        { name: 'Address', href: '/address' }
-      ]
 
-      const initialFilter = [
-        {
-          name: "Crime",
-          isSelected: false,
-        },
-        {
-          name: "Science Fiction",
-          isSelected: false,
-        },
-        {
-          name: "Drama",
-          isSelected: false,
-        },
-      ];
-
-
-      const [calloutOpen] = useState(true);
+      const [calloutOpen, setCalloutOpen] = useState(true);
       const [movieData, setMovieData] = useState(movieList.movies);
       const [snackBarVisible, setSnackBarVisible] = useState(false);
+      const [selectedJadwal, setSelectedJadwal] = useState(null);
+      const [selectedMovieIndex, setSelectedMovieIndex] = useState(null);
+      const [buttonDisabledState, setButtonDisabledState] = useState(() =>
+        movieList.movies.map((_, index) => index !== selectedMovieIndex)
+      );
+      const [selectedGenre, setSelectedGenre] = useState(null);
 
-      const [filter, setFilter] = useState(initialFilter);
-
-      const handleChipfilter = (itemFilter: any, indexFilter: number) => {
-        setFilter((prevState) =>
-          prevState.map((itemFilter, i) => ({
-            ...itemFilter,
-            isSelected: i === indexFilter,
-          }))
-        );
-      };
-      
       
 
 
 
-  // Buat state untuk menyimpan status disabled untuk setiap film
-  const [buttonDisabledState, setButtonDisabledState] = useState(() =>
-  movieList.movies.map(() => true)
-);
-
-
-const handleChipClick = (movieIndex, jadwalIndex) => {
+ const handleChipClick = (filteredMovieIndex, jadwalIndex) => {
   setMovieData((prevMovies) =>
     prevMovies.map((movie, i) => {
-      if (i === movieIndex) {
+      console.log("mantul jaya",movie);
+      
+      if (i === filteredMovieIndex) {
         const updatedJadwalTayang = movie.jadwal_tayang.map((jadwal, idx) => ({
           ...jadwal,
           isSelected: idx === jadwalIndex,
         }));
 
-        // Periksa apakah setidaknya satu jadwal yang dipilih
-        const isAtLeastOneSelected = updatedJadwalTayang.some((jadwal) => jadwal.isSelected);
+        const selectedJadwalTayangDetails = {
+          title: movie.title,
+          genre: movie.genre,
+          jadwal_tayang: updatedJadwalTayang[jadwalIndex].name,
+        };
 
-        // Update state hanya untuk film tertentu
+        setSelectedJadwal(selectedJadwalTayangDetails);
+
+        const isAtLeastOneSelected = updatedJadwalTayang.some(
+          (jadwal) => jadwal.isSelected
+        );
         setButtonDisabledState((prev) =>
           prev.map((prevItem, prevIndex) =>
-            prevIndex === movieIndex ? !isAtLeastOneSelected : prevItem
+            prevIndex === filteredMovieIndex ? !isAtLeastOneSelected : prevItem
           )
         );
+        // Set selectedMovieIndex to the current movie index
+        setSelectedMovieIndex(filteredMovieIndex);
 
         return {
           ...movie,
@@ -303,14 +279,37 @@ const handleChipClick = (movieIndex, jadwalIndex) => {
       }
     })
   );
+
+  // Unselect button when clicking on a different movie
+  setButtonDisabledState(() =>
+    movieList.movies.map((_, index) => index !== filteredMovieIndex)
+  );
 };
 
-  
-  
-  const handleButtonClick = () => {
-    setSnackBarVisible(true);
-  };
-  
+      const filteredMovies = selectedGenre
+      ? movieData.filter((movie) => movie.genre === selectedGenre)
+      
+      : movieData;
+    
+      const breadcrumbItems = selectedJadwal
+        ? [
+            { name: "Home", href: "/agil" },
+            { name: selectedJadwal.genre },
+            { name: selectedJadwal.title },
+            { name: selectedJadwal.jadwal_tayang },
+          ]
+        : [{ name: "Home", href: "/agil" }];
+    
+      const handleButtonClick = () => {
+        setSnackBarVisible(true);
+        setTimeout(() => {
+          setSnackBarVisible(false);
+        }, 3000);
+      };
+
+      
+      
+    
 
   return (
     <div>
@@ -341,20 +340,23 @@ const handleChipClick = (movieIndex, jadwalIndex) => {
       </div>
 
       <div className="flex flex-auto py-1">
-      {filter.map((itemFilter, indexFilter) => (
-       <SignalChips
-        key={indexFilter}
-        data={itemFilter}
-        onClick={() => handleChipfilter(itemFilter, indexFilter)}
-         img=""
-        />
-        ))}
+        {/* Render SignalChips for each unique genre */}
+        {Array.from(new Set(movieList.movies.map((movie) => movie.genre))).map(
+          (genre, index) => (
+            <SignalChips
+              key={index}
+              data={{ name: genre }}
+              onClick={() => setSelectedGenre(genre)}
+              img=""
+            />
+          )
+        )}
       </div>
 
       <div className="border border-gray-300 max-w-[1000px] m-auto p-5 rounded-md mb-5">
       <div className="flex flex-wrap ">
-      {movieData.map((movie, movieIndex) => (
-          <div key={movieIndex} className="w-1/2 lg:w-1/3 p-2 card-product">
+      {filteredMovies.map((movie, movieIndex) => (
+        <div key={movieIndex} className="w-1/2 lg:w-1/3 p-2 card-product">
             <div className="shadow-sm border border-gray-300 p-5 rounded-xl">
             <SignalCard>
               <div className="flex flex-col">
