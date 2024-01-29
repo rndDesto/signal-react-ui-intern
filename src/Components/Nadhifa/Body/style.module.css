@@ -1,0 +1,27 @@
+.Body-saya{
+    margin: 15px 30px;
+    border: 1px solid grey;
+
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    width: auto;
+    white-space: nowrap;
+    justify-self: center;
+    align-items: center; 
+    display: flex;
+    
+}
+
+.keywords-active{
+    background-color: rgba(0, 0, 255, 0.5)
+}
+
+button:disabled{
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+    pointer-events: none;
+}

@@ -1,0 +1,34 @@
+.root{
+    background-color:white ;
+    border: 1px solid grey;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px  ;
+    display: flex; 
+    align-items: flex-start;
+    height: 200px;
+    
+}
+
+
+.color-valid{
+    background-color: #EDFCF0;
+    border: 1px solid #008E53;
+
+}
+.color-warning{
+    background-color: #FEF3D4;
+    border: 1px solid #FED27F;
+
+}
+.color-info{
+    background-color: #E7F5FC;
+    border: 1px solid #0050AE;
+
+}
+.color-error{
+    background-color: #FDDDD4;
+    border: 1px solid #BC1D42;
+
+}

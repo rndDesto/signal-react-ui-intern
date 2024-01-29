@@ -1,15 +1,15 @@
 .contain {
   display: flex;
-  gap: 15px;
+  gap: 5px;
 }
 
 .contain::after {
   content: "/";
-  padding-right: 15px;
+  padding-right: 5px;
 }
 .contain:last-child:after {
   content: "";
-  padding-right: 15px;
+  padding-right: 5px;
 }
 
 .dropdown-trigger {
@@ -27,11 +27,13 @@
   translate: initial;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  border-radius: 10px;
   z-index: 1;
 }
 
 .dropdown-trigger:hover .dropdown {
   display: block;
+
 }
 
 .dropdown ul {
